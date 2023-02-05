@@ -1,0 +1,110 @@
+.carousel_main {
+  width: 980px;
+  height: 100%;
+  margin: 0 auto;
+}
+.find-top .carousel {
+  position: relative;
+  width: 100%;
+  height: 285px;
+  background-color: gray;
+}
+.find-top .carousel .arrow-left,
+.find-top .carousel .arrow-right {
+  position: absolute;
+  top: 40%;
+  width: 37px;
+  height: 63px;
+}
+.find-top .carousel .arrow-left span,
+.find-top .carousel .arrow-right span {
+  display: block;
+  position: absolute;
+  top: 17px;
+  width: 28px;
+  height: 28px;
+}
+.find-top .carousel .arrow-left:hover,
+.find-top .carousel .arrow-right:hover {
+  background-color: black;
+  opacity: 0.2;
+}
+.find-top .carousel .arrow-left {
+  left: 9%;
+}
+.find-top .carousel .arrow-left span {
+  left: 12px;
+  border-top: 2px solid #e1f2fe;
+  border-left: 2px solid #e1f2fe;
+  transform: rotate(-45deg);
+}
+.find-top .carousel .arrow-right {
+  right: 9%;
+}
+.find-top .carousel .arrow-right span {
+  right: 12px;
+  border-top: 2px solid #e1f2fe;
+  border-right: 2px solid #e1f2fe;
+  transform: rotate(45deg);
+}
+.find-top .carousel ol {
+  position: absolute;
+  top: 90%;
+  left: 35%;
+}
+.find-top .carousel ol li {
+  float: left;
+  width: 8px;
+  height: 8px;
+  background-color: #ccc5c9;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.find-top .carousel ol li:hover {
+  cursor: pointer;
+  background-color: red;
+}
+.find-top .carousel .carousel-box {
+  width: 730px;
+  height: 285px;
+  overflow: hidden;
+  float: left;
+}
+.find-top .carousel .carousel-box ul li {
+  float: left;
+  display: none;
+}
+.find-top .carousel .carousel-box ul li img {
+  width: 730px;
+  height: auto;
+}
+.find-top .carousel .carousel-box ul .current {
+  display: block;
+}
+.find-top .carousel .adv {
+  position: relative;
+  float: right;
+  width: 250px;
+  height: 100%;
+  background: url("../logo/download.png") no-repeat 0 0;
+}
+.find-top .carousel .adv .download {
+  position: absolute;
+  top: 186px;
+  left: 19px;
+  width: 216px;
+  height: 56px;
+}
+.find-top .carousel .adv .download:hover {
+  background: url("../logo/download.png") no-repeat 0 -290px;
+}
+.find-top .carousel .adv p {
+  position: absolute;
+  bottom: 18px;
+  left: 2px;
+  width: 254px;
+  height: 16px;
+  font-size: 12px;
+  color: #8d8d8d;
+  text-align: center;
+}

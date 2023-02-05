@@ -1,0 +1,31 @@
+.myMusic {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.myMusic-body {
+  width: 980px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+  overflow: hidden;
+}
+.myMusic-info {
+  position: relative;
+  width: 807px;
+  height: 270px;
+  margin: 0 auto;
+  margin-top: 104px;
+  background: url("../logo/mymusic.png") no-repeat 0 0;
+}
+.myMusic-info a {
+  position: absolute;
+  top: 200px;
+  right: 158px;
+  width: 167px;
+  height: 45px;
+}
+.myMusic-info a:hover {
+  background: url("../logo/mymusic.png") no-repeat 0 -276px;
+}

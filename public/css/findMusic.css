@@ -1,0 +1,620 @@
+.find-body {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.find-body .find-body-box {
+  width: 980px;
+  background-color: #fff;
+  margin: auto;
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+  overflow: hidden;
+}
+.find-body .find-body-box .find-body-left {
+  float: left;
+  width: 730px;
+  padding: 20px 20px 40px 20px;
+}
+.find-body .find-body-box .find-body-left div {
+  width: 100%;
+}
+.find-body .find-body-box .find-body-left div .left-top {
+  position: relative;
+  width: 690px;
+  height: 35px;
+  border-bottom: 2px solid #d70000;
+  padding: 0px 10px 0px 34px;
+  line-height: 28px;
+}
+.find-body .find-body-box .find-body-left div .hot {
+  font-size: 20px;
+  float: left;
+  color: black;
+}
+.find-body .find-body-box .find-body-left div .hot:hover {
+  text-decoration: none;
+}
+.find-body .find-body-box .find-body-left div .hot::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 2px;
+  width: 30px;
+  height: 30px;
+  background: url("../logo/index.png") no-repeat -228px -156px;
+}
+.find-body .find-body-box .find-body-left div .more {
+  font-size: 12px;
+  color: #666;
+  position: absolute;
+  top: 0px;
+  right: 25px;
+}
+.find-body .find-body-box .find-body-left div .more:hover {
+  text-decoration: underline;
+}
+.find-body .find-body-box .find-body-left div .more::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 9px;
+  right: -15px;
+  width: 12px;
+  height: 12px;
+  background: url("../logo/index.png") no-repeat 0px -240px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(1) .kinds {
+  overflow: hidden;
+  float: left;
+  margin-left: 20px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(1) .kinds li {
+  float: left;
+}
+.find-body .find-body-box .find-body-left div:nth-child(1) .kinds li a {
+  font-size: 12px;
+  color: #666;
+}
+.find-body .find-body-box .find-body-left div:nth-child(1) .kinds li a:hover {
+  text-decoration: underline;
+}
+.find-body .find-body-box .find-body-left div:nth-child(1) .kinds li:nth-child(even) {
+  width: 1px;
+  height: 15px;
+  background-color: #ccc;
+  margin: 7px 10px 0px 10px;
+}
+.find-body .find-body-box .find-body-left div .carousel2-left {
+  position: absolute;
+  top: 71px;
+  left: 4px;
+  width: 17px;
+  height: 17px;
+  color: #898989;
+}
+/* .find-body .find-body-box .find-body-left div .carousel2-left::after {
+  content: "\e901";
+  font-family: 'icomoon';
+  font-size: 25px;
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: -5px;
+  width: 100%;
+  height: 100%;
+} */
+.find-body .find-body-box .find-body-left div .carousel2-left:hover {
+  color: #656565;
+}
+.find-body .find-body-box .find-body-left div .carousel2-right {
+  position: absolute;
+  top: 71px;
+  right: 8px;
+  width: 17px;
+  height: 17px;
+  color: #898989;
+}
+  /* .find-body .find-body-box .find-body-left div .carousel2-right::after {
+    content: "\e902";
+    font-family: 'icomoon';
+    font-size: 25px;
+    display: block;
+    position: absolute;
+    top: -3px;
+    right: 3px;
+    width: 100%;
+    height: 100%;
+  } */
+.find-body .find-body-box .find-body-left div .carousel2-right:hover {
+  color: #656565;
+}
+.find-body .find-body-box .find-body-left div .carousel2 {
+  position: relative;
+  width: 645px;
+  height: 180px;
+  overflow: hidden;
+}
+.find-body .find-body-box .find-body-left div .carousel2 ul {
+  position: absolute;
+  top: 0;
+  width: 645px;
+  margin-top: 28px;
+}
+.find-body .find-body-box .find-body-left div .carousel2 ul li {
+  float: left;
+  width: 118px;
+  height: 150px;
+  margin-left: 11px;
+}
+.find-body .find-body-box .find-body-left div .carousel2 .pre-ul {
+  left: -645px;
+}
+.find-body .find-body-box .find-body-left div .carousel2 .cur-ul {
+  left: 0;
+}
+.find-body .find-body-box .find-body-left div .carousel2 .next-ul {
+  left: 645px;
+}
+.find-body .find-body-box .find-body-left div .carousel2 ul li div {
+  position: relative;
+  width: 118px;
+  height: 100px;
+}
+.find-body .find-body-box .find-body-left div .carousel2 ul li div a {
+  width: 118px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url("../logo/coverall.png") no-repeat 0 -570px;
+}
+.find-body .find-body-box .find-body-left div .carousel2 ul li div span {
+  position: absolute;
+  bottom: 5px;
+  display: none;
+  right: 25px;
+  width: 22px;
+  height: 22px;
+  background: url('../logo/iconall.png') no-repeat 0 -85px;
+}
+.find-body .find-body-box .find-body-left div .carousel2 ul li p {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 15px;
+}
+.find-body .find-body-box .find-body-left div .carousel2 ul li p:nth-child(2) > a {
+  color: black;
+  font-size: 13px;
+}
+.find-body .find-body-box .find-body-left div .carousel2 ul li p:last-child > a {
+  color: #666;
+  font-size: 10px;
+}
+.find-body .find-body-box .find-body-left div .carousel2 ul li p a:hover {
+  text-decoration: underline;
+}
+.find-body .find-body-box .find-body-left div:nth-child(2) .disk {
+  height: 186px;
+  width: 100%;
+  margin: 20px 0px 37px;
+  border: 1px solid #d3d3d3;
+}
+.find-body .find-body-box .find-body-left div:nth-child(2) .disk > div {
+  position: relative;
+  width: 100%;
+  height: 184px;
+  border: 1px solid #fff;
+  padding-left: 16px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body {
+  width: 100%;
+  height: 473px;
+  margin-top: 20px;
+  background: url("../logo/index_bill.png") no-repeat 0 0;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dl {
+  float: left;
+  width: 230px;
+  height: 100%;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dt {
+  position: relative;
+  height: 100px;
+  padding: 20px 0 0 19px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dt .dt-left {
+  float: left;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dt .dt-left img {
+  width: 80px;
+  height: 80px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dt .dt-left a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: url("../logo/coverall.png") no-repeat -145px -57px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dt .dt-right {
+  float: left;
+  width: 116px;
+  margin: 6px 0 0 10px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dt .dt-right a:first-child {
+  background-color: black;
+  color: #333;
+  font-size: 14px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dt .dt-right a:first-child:hover {
+  text-decoration: underline;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dt .dt-right a:nth-child(2) {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin: 5px 10px 0 0;
+  background: url("../logo/index.png") no-repeat -267px -205px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dt .dt-right a:nth-child(2):hover {
+  background: url("../logo/index.png") no-repeat -267px -235px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dt .dt-right a:nth-child(3) {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: url("../logo/index.png") no-repeat -300px -205px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dt .dt-right a:nth-child(3):hover {
+  background: url("../logo/index.png") no-repeat -300px -235px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd {
+  font-size: 12px;
+  color: #333;
+  margin-top: 20px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol {
+  height: 320px;
+  margin-left: 50px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li {
+  position: relative;
+  height: 32px;
+  line-height: 32px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li span {
+  float: left;
+  width: 35px;
+  height: 100%;
+  margin-left: -35px;
+  font-size: 16px;
+  color: #666666;
+  text-align: center;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li .red_span {
+  color: #c10d0c;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li a {
+  float: left;
+  width: 170px;
+  height: 100%;
+  color: black;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li a:hover {
+  text-decoration: underline;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li .trible {
+  position: absolute;
+  top: 1px;
+  right: 2px;
+  display: none;
+  width: 82px;
+  margin-top: 7px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li .trible a {
+  width: 17px;
+  height: 17px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li .trible a:nth-child(1) {
+  margin-left: 10px;
+  background: url("../logo/index.png") no-repeat -267px -268px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li .trible a:nth-child(1):hover {
+  background: url("../logo/index.png") no-repeat -267px -288px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li .trible a:nth-child(2) {
+  margin: 2px 6px 0 10px;
+  background: url("../logo/icon.png") no-repeat 0 -700px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li .trible a:nth-child(2):hover {
+  background: url("../logo/icon.png") no-repeat -22px -700px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li .trible a:nth-child(3) {
+  background: url("../logo/index.png") no-repeat -297px -268px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body dd ol li .trible a:nth-child(3):hover {
+  background: url("../logo/index.png") no-repeat -297px -288px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body .forAll {
+  height: 32px;
+  width: 100%;
+  padding-right: 32px;
+  text-align: right;
+  line-height: 32px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body .forAll a {
+  color: #000;
+  font-size: 12px;
+}
+.find-body .find-body-box .find-body-left div:nth-child(3) .third-body .forAll a:hover {
+  text-decoration: underline;
+}
+.find-body .find-body-box .find-body-right {
+  float: left;
+  width: 248px;
+  height: 1390px;
+  background-color: #fff;
+  border-left: 1px solid #d3d3d3;
+}
+.find-body .find-body-box .find-body-right div:nth-child(1) {
+  width: 100%;
+  height: 126px;
+  background: url("../logo/index.png") no-repeat 0 0;
+}
+.find-body .find-body-box .find-body-right div:nth-child(1) p {
+  width: 205px;
+  line-height: 22px;
+  font-size: 12px;
+  padding: 16px 0px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #666666;
+}
+.find-body .find-body-box .find-body-right div:nth-child(1) a {
+  display: block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 12px;
+  background: url("../logo/index.png") no-repeat 0 -195px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(1) a:hover {
+  background: url("../logo/index.png") no-repeat -110px -195px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) {
+  width: 100%;
+  height: 455px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) h3 {
+  height: 23px;
+  margin: 0 20px;
+  border-bottom: 1px solid #cccccc;
+  color: #333333;
+  font-size: 13px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) h3 span {
+  float: left;
+  color: #333333;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) h3 a {
+  float: right;
+  font-size: 12px;
+  color: #666;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) h3 a:hover {
+  text-decoration: underline;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) ul {
+  width: 100%;
+  height: 360px;
+  margin: 6px 0 14px 20px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) ul li {
+  width: 210px;
+  height: 62px;
+  margin-top: 14px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) ul li img {
+  float: left;
+  width: 62px;
+  height: 62px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) ul li div {
+  float: left;
+  width: 147px;
+  height: 60px;
+  padding-left: 14px;
+  border: 1px solid #e9e9e9;
+  border-left: none;
+  margin-top: 0;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) ul li div h4 {
+  color: #333;
+  font-size: 13px;
+  margin-top: 8px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) ul li div p {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) > a {
+  display: inline-block;
+  width: 210px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 20px;
+  padding: 0 15px 0 20px;
+  text-align: center;
+  color: #333;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  font-weight: bold;
+  background: url("../logo/button2.png") no-repeat 0 -60px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(2) > a:hover {
+  background: url("../logo/button2.png") no-repeat 0 -142px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(3) {
+  width: 100%;
+  height: 295px;
+  margin-top: 30px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(3) h3 {
+  height: 23px;
+  margin: 0 20px;
+  border-bottom: 1px solid #ccc;
+  color: #333;
+  font-size: 13px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(3) ul {
+  width: 230px;
+  height: 250px;
+  margin: 20px 0 0 20px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(3) ul li {
+  width: 210px;
+  height: 50px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(3) ul li > a {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(3) ul li > div {
+  float: left;
+  width: 160px;
+  height: 40px;
+  margin-top: 0;
+}
+.find-body .find-body-box .find-body-right div:nth-child(3) ul li > div p:nth-child(1) {
+  font-size: 13px;
+}
+.find-body .find-body-box .find-body-right div:nth-child(3) ul li > div p:nth-child(1):hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.find-body .find-body-box .find-body-right div:nth-child(3) ul li > div p:nth-child(2) {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.first-body {
+  overflow: hidden;
+}
+.first-body ul {
+  overflow: hidden;
+  margin: 20px 0px 0px -42px;
+}
+.first-body ul li {
+  float: left;
+  width: 182px;
+  height: 234px;
+  padding: 0px 0px 30px 42px;
+}
+.first-body ul li div {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+.first-body ul li div a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../logo/coverall.png") no-repeat 0 0;
+}
+.first-body ul li div div {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 27px;
+  background: url("../logo/coverall.png") no-repeat 0 -537px;
+}
+.first-body ul li div div span {
+  position: absolute;
+  top: 5px;
+  left: 28px;
+  font-size: 13px;
+  color: #ccc;
+}
+.first-body ul li div div span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -18px;
+  top: 4px;
+  width: 14px;
+  height: 11px;
+  background: url("../logo/iconall.png") no-repeat 0 -24px;
+}
+.first-body ul li div div a {
+  position: absolute;
+  top: 5px;
+  left: 115px;
+  width: 16px;
+  height: 17px;
+  background: url("../logo/iconall.png") no-repeat 0 0;
+}
+.first-body ul li div div a:hover {
+  background: url("../logo/iconall.png") no-repeat 0 -60px;
+}
+.first-body ul li p:nth-child(2) {
+  text-align: left;
+}
+.first-body ul li p:nth-child(2) a {
+  color: black;
+  font-size: 14px;
+}
+.first-body ul li p:nth-child(2) a:hover {
+  text-decoration: underline;
+}
+.first-body ul li p:nth-child(3) {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.first-body ul li p:nth-child(3) a {
+  color: black;
+  font-size: 14px;
+}
+.first-body ul li p:nth-child(3) a:hover {
+  text-decoration: underline;
+}
+.first-body ul li > span {
+  color: #999;
+  font-size: 12px;
+}
+.first-body ul li p:nth-child(5) {
+  text-align: left;
+  display: inline-block;
+}
+.first-body ul li p:nth-child(5) a {
+  color: #333;
+  font-size: 12px;
+}
+.first-body ul li p:nth-child(5) a:hover {
+  text-decoration: underline;
+}

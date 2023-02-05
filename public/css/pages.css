@@ -1,0 +1,52 @@
+.pages {
+  width: 100%;
+  height: 26px;
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+.pages i {
+  margin-right: 2px;
+}
+.pages a {
+  display: inline-block;
+  color: #333;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  line-height: 21px;
+  border-radius: 2px;
+  margin-right: 2px;
+  height: 24px;
+  text-align: center;
+  padding: 0 8px;
+}
+.pages a:hover {
+  border: 1px solid #000;
+}
+.pages .pre {
+  width: 71px;
+  height: 26px;
+  text-align: left;
+  padding: 0 0 0 22px;
+  line-height: 23px;
+  background: url('../logo/button.png') no-repeat 0 -560px;
+}
+.pages .pre:hover {
+  background: url('../logo/button.png') no-repeat 0 -590px;
+  border: 1px solid #ccc;
+}
+.pages .next {
+  width: 71px;
+  height: 26px;
+  line-height: 23px;
+  text-align: left;
+  padding: 0 0 0 12px;
+  background: url('../logo/button.png') no-repeat -75px -560px;
+}
+.pages .next:hover {
+  background: url('../logo/button.png') no-repeat -75px -590px;
+  border: 1px solid #ccc;
+}
+.pages .curr {
+  color: #fff;
+  background: url('../logo/button.png') no-repeat 0 -650px;
+}

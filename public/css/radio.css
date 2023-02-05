@@ -1,0 +1,287 @@
+.radio {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.radio-body {
+  width: 982px;
+  background-color: #fff;
+  margin: auto;
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+  padding: 40px;
+}
+.list {
+  width: 100%;
+}
+.list ul {
+  overflow: hidden;
+  margin-left: -33px;
+}
+.list ul li {
+  float: left;
+  width: 70px;
+  height: 72px;
+  margin: 0 0 25px 33px;
+}
+.list ul li a {
+  display: block;
+  width: 70px;
+  height: 70px;
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+.list ul li a:hover {
+  background: url('../radio-imgs/radio_bg.png') no-repeat 0 0;
+}
+.list ul li a span {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin: 2px 11px 0 11px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.list ul li:nth-child(1) a > span {
+  background-image: url('../radio-imgs/radio01.png');
+}
+.list ul li:nth-child(2) a > span {
+  background-image: url('../radio-imgs/radio02.png');
+}
+.list ul li:nth-child(3) a > span {
+  background-image: url('../radio-imgs/radio03.png');
+}
+.list ul li:nth-child(4) a > span {
+  background-image: url('../radio-imgs/radio04.png');
+}
+.list ul li:nth-child(5) a > span {
+  background-image: url('../radio-imgs/radio05.png');
+}
+.list ul li:nth-child(6) a > span {
+  background-image: url('../radio-imgs/radio06.png');
+}
+.list ul li:nth-child(7) a > span {
+  background-image: url('../radio-imgs/radio07.png');
+}
+.list ul li:nth-child(8) a > span {
+  background-image: url('../radio-imgs/radio08.png');
+}
+.list ul li:nth-child(9) a > span {
+  background-image: url('../radio-imgs/radio09.png');
+}
+.list ul li:nth-child(10) a > span {
+  background-image: url('../radio-imgs/radio10.png');
+}
+.list ul li:nth-child(11) a > span {
+  background-image: url('../radio-imgs/radio11.png');
+}
+.list ul li:nth-child(12) a > span {
+  background-image: url('../radio-imgs/radio12.png');
+}
+.list ul li:nth-child(13) a > span {
+  background-image: url('../radio-imgs/radio13.png');
+}
+.list ul li:nth-child(14) a > span {
+  background-image: url('../radio-imgs/radio14.png');
+}
+.list ul li:nth-child(15) a > span {
+  background-image: url('../radio-imgs/radio15.png');
+}
+.list ul li:nth-child(16) a > span {
+  background-image: url('../radio-imgs/radio16.png');
+}
+.list ul li:nth-child(17) a > span {
+  background-image: url('../radio-imgs/radio17.png');
+}
+.list ul li:nth-child(18) a > span {
+  background-image: url('../radio-imgs/radio18.png');
+}
+.radio-t {
+  width: 100%;
+  overflow: hidden;
+}
+.radio-t > div {
+  width: 426px;
+}
+.radio-t > div ul {
+  width: 100%;
+  border: 1px solid #e2e2e2;
+  border-top: none;
+}
+.radio-t > div ul li {
+  width: 100%;
+  height: 60px;
+  padding: 10px 0;
+}
+.radio-t > div ul li:hover {
+  background-color: #eee;
+}
+.radio-t > div ul li a:nth-child(1) {
+  position: relative;
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-left: 20px;
+}
+.radio-t > div ul li a:nth-child(1) i {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 22px;
+  height: 22px;
+  display: none;
+  background: url('../logo/iconall.png') 0 -85px;
+}
+.radio-t > div ul li > div {
+  float: left;
+  width: 254px;
+  height: 40px;
+  margin: 1px 0 0 10px;
+}
+.radio-t > div ul li > div p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.radio-t > div ul li > div p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.radio-t > div ul li > div p:first-child {
+  color: #333;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.radio-t > div ul li > div p:last-child {
+  display: inline;
+  color: #999;
+  font-size: 12px;
+}
+.radio-t > div ul li a:nth-child(3) {
+  float: right;
+  width: 62px;
+  height: 18px;
+  border: 1px solid #999;
+  margin-top: 12px;
+  margin-right: 28px;
+  padding: 0 6px;
+  color: #999;
+  font-size: 12px;
+}
+.radio-t > div ul li a:nth-child(3):hover {
+  color: black;
+  border: 1px solid #000;
+}
+.radio-t > div ul li span {
+  float: right;
+  margin-top: 15px;
+  margin-right: 25px;
+  width: 100px;
+  height: 8px;
+  background: url('../logo/table.png') 0 -240px;
+}
+.radio-t > div ul li span > i {
+  display: block;
+  height: 100%;
+  padding-left: 4px;
+  background: url('../logo/table.png') right -318px;
+}
+.radio-t > div ul li span > i > i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-left: -4px;
+  background: url('../logo/table.png') 0 -304px;
+}
+.radio-t > div ul li:nth-child(even) {
+  background-color: #eee;
+}
+.radio-t > div:nth-child(1) {
+  float: left;
+}
+.radio-t > div:nth-child(2) {
+  float: right;
+}
+.radio-top {
+  width: 100%;
+  height: 40px;
+  border-bottom: 2px solid #c20c0c;
+}
+.radio-top a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+.radio-top a:hover {
+  text-decoration: underline;
+}
+.radio-top a:nth-child(1) {
+  float: left;
+  font-size: 27px;
+  color: #333;
+}
+.radio-top a:nth-child(1) i {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  font-size: 27px;
+  color: #333;
+  text-align: center;
+  line-height: 24px;
+}
+.radio-top a:nth-child(2) {
+  float: right;
+  color: #666;
+  font-size: 12px;
+  line-height: 50px;
+}
+.radio-body .radb {
+  width: 100%;
+  margin-top: 35px;
+}
+.radio-body .radb ul {
+  overflow: hidden;
+  width: 100%;
+}
+.radio-body .radb ul li {
+  float: left;
+  width: 435px;
+  height: 161px;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 20px 0;
+  margin-right: 15px;
+}
+.radio-body .radb ul li > a {
+  float: left;
+  width: 120px;
+  height: 120px;
+  background-color: green;
+}
+.radio-body .radb ul li > a img {
+  width: 120px;
+  height: 120px;
+}
+.radio-body .radb ul li div {
+  float: left;
+  width: 295px;
+  height: 64px;
+  margin: 15px 0 0 15px;
+}
+.radio-body .radb ul li div h3 {
+  float: left;
+  font-size: 18px;
+  width: 100%;
+  margin: 16px 0 20px 0;
+}
+.radio-body .radb ul li div h3 a {
+  color: #333;
+}
+.radio-body .radb ul li div p {
+  float: left;
+  color: #999;
+  font-size: 12px;
+  width: 100%;
+}
+.radio-body .radb .dropBot {
+  border-bottom: none;
+}

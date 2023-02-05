@@ -1,0 +1,149 @@
+.singer {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.singer .singer-body {
+  width: 982px;
+  margin: auto;
+  background-color: #fff;
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+  overflow: hidden;
+}
+.sl {
+  float: left;
+  width: 180px;
+  border-right: 1px solid #d3d3d3;
+  background-color: #f9f9f9;
+  padding: 51px 10px 40px 10px;
+}
+.sl h2 {
+  font-size: 16px;
+  padding-left: 14px;
+}
+.sl a {
+  display: block;
+  width: 100%;
+  height: 30px;
+  color: #333;
+  font-size: 12px;
+  line-height: 30px;
+  padding-left: 27px;
+  background: url('../logo/singer.png') 0 -29px;
+}
+.sl a:hover {
+  text-decoration: underline;
+}
+.sl .curr {
+  color: #c20c0c;
+  margin-top: 5px;
+  background: url('../logo/singer.png') 0 0;
+}
+.sl-b {
+  width: 100%;
+  height: 135px;
+  margin-top: 5px;
+  padding-top: 16px;
+  border-top: 1px solid #d3d3d3;
+}
+.sr {
+  float: left;
+  width: 800px;
+  padding: 40px;
+}
+.sr .singer-b {
+  width: 100%;
+}
+.sr .singer-b ul {
+  margin-left: -17px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.sr .singer-b ul li {
+  float: left;
+  width: 147px;
+  height: 184px;
+  padding: 0 0 30px 17px;
+}
+.sr .singer-b ul li div {
+  position: relative;
+  width: 130px;
+  height: 130px;
+}
+.sr .singer-b ul li div img {
+  width: 130px;
+  height: 130px;
+}
+.sr .singer-b ul li div a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 130px;
+  height: 130px;
+  background: url('../logo/coverall.png') 0 -680px;
+}
+.sr .singer-b ul li a:hover {
+  text-decoration: underline;
+}
+.sr .singer-b ul li p {
+  float: left;
+}
+.sr .singer-b ul li p a {
+  color: #000;
+  font-size: 12px;
+}
+.sr .singer-b ul li > a {
+  float: right;
+  width: 17px;
+  height: 18px;
+  margin-top: 5px;
+  background: url('../logo/icon.png') 0 -740px;
+}
+.for-all {
+  overflow: hidden;
+}
+.for-all .ul-all {
+  margin-left: 0px;
+  margin-top: 0px;
+  border-top: 1px dotted #999;
+  overflow: hidden;
+  padding-top: 10px;
+}
+.for-all .ul-all li {
+  float: left;
+  width: 144px;
+  height: 30px;
+  padding-left: 17px;
+}
+.for-all .ul-all li a:nth-child(1) {
+  float: left;
+  font-size: 12px;
+  color: #000;
+  background: none;
+}
+.for-all .ul-all li a:nth-child(2) {
+  float: left;
+  width: 17px;
+  height: 18px;
+  margin-top: 2px;
+  margin-left: 2px;
+  background: url('../logo/icon.png') 0 -740px;
+}
+.singer-top {
+  width: 100%;
+  height: 40px;
+  border-bottom: 2px solid #c20c0c;
+}
+.singer-top h3 {
+  float: left;
+  color: #333;
+  font-size: 24px;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.singer-top a {
+  float: right;
+  color: #666;
+  font-size: 12px;
+  line-height: 50px;
+}

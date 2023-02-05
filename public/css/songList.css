@@ -1,0 +1,196 @@
+.songList {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.song-body {
+  position: relative;
+  width: 980px;
+  padding: 40px;
+  background-color: #fff;
+  margin: auto;
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+}
+.st {
+  width: 100%;
+  height: 40px;
+  border-bottom: 2px solid #c20c0c;
+}
+.st h3 {
+  float: left;
+  font-size: 24px;
+  color: #333;
+  font-weight: normal;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.st > a:nth-child(2) {
+  float: left;
+  width: 91px;
+  height: 31px;
+  padding-right: 5px;
+  margin: 2px 0 0 12px;
+  background: url('../logo/button2.png') no-repeat right -100px;
+}
+.st > a:nth-child(2) > span {
+  float: left;
+  width: 100%;
+  height: 100%;
+  line-height: 31px;
+  text-align: left;
+  font-size: 12px;
+  color: #0c73c2;
+  padding: 0 10px 0 15px;
+  background: url('../logo/button2.png') no-repeat 0 -59px;
+}
+.st > a:nth-child(2) > span:hover {
+  background: url('../logo/button2.png') no-repeat 0 -141px;
+}
+.st > a:nth-child(2) > span em {
+  float: right;
+  width: 8px;
+  height: 5px;
+  margin-top: 14px;
+  background: url('../logo/icon.png') no-repeat -70px -543px;
+}
+.st > a:nth-child(3) {
+  float: right;
+  width: 46px;
+  height: 29px;
+  text-align: center;
+  line-height: 27px;
+  font-size: 12px;
+  color: #fff;
+  background: url('../logo/button.png') no-repeat 0 0;
+}
+.st > a:nth-child(3):hover {
+  text-decoration: underline;
+}
+.choice {
+  position: absolute;
+  top: 75px;
+  right: 260px;
+  width: 720px;
+  height: 413px;
+  display: none;
+}
+.choice-t {
+  width: 100%;
+  height: 32px;
+  background: url('../logo/sltlyr.png') no-repeat;
+}
+.choice-t i {
+  position: absolute;
+  top: 2px;
+  left: 132px;
+  width: 24px;
+  height: 11px;
+  background: url('../logo/iconall.png') no-repeat -48px 0;
+}
+.choice-body {
+  width: 100%;
+  height: 361px;
+  padding: 0 10px;
+  background: url('../logo/sltlyr.png') repeat-y -720px 0;
+}
+.choice-body > div:nth-child(1) {
+  width: 100%;
+  height: 38px;
+  padding-left: 26px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.choice-body > div:nth-child(1) a {
+  float: left;
+  width: 75px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  color: #333;
+  font-size: 12px;
+  background: url('../logo/button.png') no-repeat 0 -64px;
+}
+.choice-body > div:nth-child(1) a:hover {
+  text-decoration: underline;
+}
+.choice-body dl {
+  width: 100%;
+  overflow: hidden;
+}
+.choice-body dl dt {
+  float: left;
+  width: 71px;
+  height: 42px;
+  padding-top: 15px;
+  border-right: 1px solid #e6e6e6;
+  color: #333;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 -100px 0 26px;
+  line-height: 24px;
+}
+.choice-body dl .dt-i-1 {
+  float: left;
+  width: 23px;
+  height: 23px;
+  margin-right: 8px;
+  background: url('../logo/icon.png') no-repeat -20px -735px;
+}
+.choice-body dl .dt-i-2 {
+  float: left;
+  width: 23px;
+  height: 23px;
+  margin-right: 8px;
+  background: url('../logo/icon.png') no-repeat 0 -60px;
+}
+.choice-body dl .dt-i-3 {
+  float: left;
+  width: 23px;
+  height: 23px;
+  margin-right: 8px;
+  background: url('../logo/icon.png') no-repeat 0 -88px;
+}
+.choice-body dl .dt-i-4 {
+  float: left;
+  width: 23px;
+  height: 23px;
+  margin-right: 8px;
+  background: url('../logo/icon.png') no-repeat 0 -117px;
+}
+.choice-body dl .dt-i-5 {
+  float: left;
+  width: 23px;
+  height: 23px;
+  margin-right: 8px;
+  background: url('../logo/icon.png') no-repeat 0 -141px;
+}
+.choice-body dl dd {
+  float: left;
+  width: 604px;
+  margin-left: 96px;
+  padding: 16px 15px 0 15px;
+  border-left: 1px solid #e6e6e6;
+}
+.choice-body dl dd a {
+  white-space: nowrap;
+  color: #333;
+  font-size: 12px;
+  line-height: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.choice-body dl dd a:hover {
+  text-decoration: underline;
+}
+.choice-body dl dd span {
+  line-height: 24px;
+  font-size: 12px;
+  color: #d8d8d8;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 6px;
+}
+.choice-body dl .last-dd {
+  padding: 16px 15px 25px 15px;
+}
+.choice-b {
+  width: 100%;
+  height: 20px;
+  background: url('../logo/sltlyr.png') no-repeat -1440px -12px;
+}

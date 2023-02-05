@@ -1,0 +1,173 @@
+header {
+  width: 100%;
+}
+header .header-top {
+  width: 100%;
+  height: 70px;
+  background-color: #242424;
+}
+header .header-top .header-top-box {
+  width: 1100px;
+  height: 100%;
+  margin: auto;
+}
+header .header-top .header-top-box h1 {
+  float: left;
+  width: 176px;
+  height: 70px;
+  padding-right: 20px;
+}
+header .header-top .header-top-box h1 a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../logo/topbar.png") no-repeat 0px 0px;
+}
+header .header-top .header-top-box ul {
+  float: left;
+  height: 100%;
+  line-height: 70px;
+}
+header .header-top .header-top-box ul li {
+  float: left;
+  position: relative;
+}
+header .header-top .header-top-box ul li a {
+  position: relative;
+  display: block;
+  color: #cccccc;
+  font-size: 14px;
+  height: 100%;
+  padding: 0px 20px;
+}
+header .header-top .header-top-box ul li a:hover {
+  color: #ffffff;
+  background-color: #000000;
+}
+header .header-top .header-top-box ul li em {
+  position: absolute;
+  left: 45%;
+  display: none;
+  top: 91%;
+  width: 12px;
+  height: 7px;
+  background: url("../logo/topbar.png") no-repeat -226px 0px;
+}
+header .header-top .header-top-box ul li:last-child > a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 95px;
+  top: 20px;
+  width: 28px;
+  height: 15px;
+  background: url("../logo/topbar.png") no-repeat -191px 1px;
+}
+header .header-top .header-top-box ul li .top-a-ele-click {
+  color: #ffffff;
+  background-color: #000000;
+}
+header .header-top .header-top-box .search {
+  float: left;
+  position: relative;
+  width: 158px;
+  height: 32px;
+  background-color: green;
+  margin: 19px 0px 0px 85px;
+  border-radius: 16px;
+  background-color: #ffffff;
+}
+header .header-top .header-top-box .search::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  background: url("../logo/topbar.png") no-repeat -9px -107px;
+}
+header .header-top .header-top-box .search input {
+  width: 74%;
+  height: 16px;
+  position: absolute;
+  left: 27px;
+  top: 8px;
+  background-color: #fff;
+  outline: none;
+  border: none;
+}
+header .header-top .header-top-box .designer {
+  display: block;
+  float: left;
+  width: 90px;
+  height: 30px;
+  font-size: 12px;
+  color: #ccc;
+  border: 1px solid #4f4f4f;
+  border-radius: 15px;
+  line-height: 30px;
+  margin: 20px 0px 0px 15px;
+  padding-left: 16px;
+}
+header .header-top .header-top-box .designer:hover {
+  color: #fff;
+  border-color: #fff;
+}
+header .header-top .header-top-box .login {
+  display: block;
+  float: left;
+  width: 28px;
+  height: 16px;
+  font-size: 12px;
+  color: #787878;
+  margin: 28px 0px 0px 15px;
+}
+header .header-top .header-top-box .login:hover {
+  text-decoration: underline;
+}
+header .header-none-box {
+  width: 100%;
+  height: 5px;
+  display: none;
+  background-color: #d80000;
+}
+header .header-bottom {
+  width: 100%;
+  height: 35px;
+  display: block;
+  background-color: #c11515;
+}
+header .header-bottom .header-bottom-box {
+  width: 1100px;
+  height: 100%;
+  margin: auto;
+}
+header .header-bottom .header-bottom-box ul {
+  height: 100%;
+  width: 100%;
+  padding-left: 180px;
+}
+header .header-bottom .header-bottom-box ul li {
+  height: 100%;
+  float: left;
+  line-height: 35px;
+}
+header .header-bottom .header-bottom-box ul li a {
+  display: block;
+  height: 100%;
+  line-height: 35px;
+  color: #fff;
+  font-size: 12px;
+  padding: 0px 15px;
+}
+header .header-bottom .header-bottom-box ul li a span {
+  padding: 2px 15px 3px 15px;
+  border-radius: 20px;
+}
+header .header-bottom .header-bottom-box ul li a span:hover {
+  background-color: #8f1515;
+}
+header .header-bottom .header-bottom-box ul li a .bottom-span-click {
+  background-color: #8f1515;
+}
