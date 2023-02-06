@@ -1,3 +1,8 @@
 import recommend from './home/recommend/idnex'
-
-export default {recommend}
+import rank from './home/rank'
+import songList from './home/songList'
+export default {
+    recommend,
+    rank,
+    songList
+}

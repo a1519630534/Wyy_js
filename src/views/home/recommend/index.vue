@@ -12,16 +12,10 @@
         <div class="carousel_main">
             <div class="carousel-box">
                 <ul>
-                    <li id="0"><a href="#"><img src="../../../../public/imgs/01.jpg"></a></li>
-                    <li id="1"><a href="#"><img src="../../../../public/imgs/02.jpg"></a></li>
-                    <li id="2" class="current"><a href="#"><img src="../../../../public/imgs/03.jpg"></a></li>
-                    <li id="3"><a href="#"><img src="../../../../public/imgs/04.jpg"></a></li>
-                    <li id="4"><a href="#"><img src="../../../../public/imgs/05.jpg"></a></li>
-                    <li id="5"><a href="#"><img src="../../../../public/imgs/06.jpg"></a></li>
-                    <li id="6"><a href="#"><img src="../../../../public/imgs/07.jpg"></a></li>
-                    <li id="7"><a href="#"><img src="../../../../public/imgs/08.jpg"></a></li>
-                    <li id="8"><a href="#"><img src="../../../../public/imgs/09.jpg"></a></li>
-                    <li id="9"><a href="#"><img src="../../../../public/imgs/10.jpg"></a></li>
+                    <li :id="index" :class="{'current':index === index}" v-for="bannerList,index in Banner.bannerList"><a href="#"><img :src="bannerList.imageUrl"></a></li>
+
+                    <!-- <li id="2" class="current"><a href="#"><img src="../../../../public/imgs/03.jpg"></a></li> -->
+
                 </ul>
             </div>
 
@@ -136,13 +130,32 @@ export default defineComponent({
     }
 
 
+    //获取轮播图
+
+    const Banner = reactive({
+        bannerList:[]
+
+        
+    })
+    
+    async function getBannerList(){
+        const result = await api.recommend.getBanner()
+        if(result.code === 200){
+            Banner.bannerList = result.banners
+        }
+    }
+
+
     return {
         getRegSonger,
-        UserList
+        UserList,
+        Banner,
+        getBannerList
     }
   },
   mounted(){
     this.getRegSonger()
+    this.getBannerList()
   }
 
 });

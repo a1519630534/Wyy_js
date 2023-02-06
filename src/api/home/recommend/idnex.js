@@ -15,5 +15,8 @@ export default {
     },
     gerHorRadio(){
         return axios.get('/dj/toplist/hours')
+    },
+    getBanner(){
+        return axios.get('/banner')
     }
 }

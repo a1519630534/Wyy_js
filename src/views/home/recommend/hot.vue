@@ -13,7 +13,7 @@
                 <li></li>
                 <li><a href="#">电子</a></li>
             </ul>
-            <a class="more" href="#">更多</a>
+            <a class="more" ><router-link to="/songlist">更多</router-link></a>
         </div>
 
         <div class="first-body">

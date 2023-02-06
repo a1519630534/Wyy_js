@@ -30,13 +30,13 @@
 <!-- header-bottom开始 -->
 <div class="header-bottom">
     <div class="header-bottom-box">
-        <ul class="header-bottom-ul">
-            <li><a id="intro" href="#"><router-link to="/">推荐</router-link></a></li>
-            <li><a id="ranking" href="#"><router-link to="/rank">排行榜</router-link></a></li>
-            <li><a id="songList" href="#"><router-link to="/songlist">歌单</router-link></a></li>
-            <li><a id="radio" href="#"><router-link to="/radio">主播电台</router-link></a></li>
-            <li><a id="singer" href="#"><router-link to="/songer">歌手</router-link></a></li>
-            <li><a id="newDisk" href="#"><router-link to="/newdisk">新碟上架</router-link></a></li>
+        <ul class="header-bottom-ul"> 
+            <li><a id="intro" href="#" ><router-link to="/"><span :class="{'bottom-span-click':$route.path === '/'}">推荐</span></router-link></a></li>
+            <li><a id="ranking" href="#"><router-link to="/rank"><span :class="{'bottom-span-click':$route.path === '/rank'}">排行榜</span></router-link></a></li>
+            <li><a id="songList" href="#"><router-link to="/songlist"><span :class="{'bottom-span-click':$route.path === '/songlist'}">歌单</span></router-link></a></li>
+            <li><a id="radio" href="#"><router-link to="/radio"><span :class="{'bottom-span-click':$route.path === '/radio'}">主播电台</span></router-link></a></li>
+            <li><a id="singer" href="#"><router-link to="/songer"><span :class="{'bottom-span-click':$route.path === '/songer'}">歌手</span></router-link></a></li>
+            <li><a id="newDisk" href="#"><router-link to="/newdisk"><span :class="{'bottom-span-click':$route.path === '/newdisk'}">新碟上架</span></router-link></a></li>
         </ul>
     </div>
 </div>

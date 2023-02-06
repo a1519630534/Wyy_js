@@ -71,7 +71,7 @@
   right: 260px;
   width: 720px;
   height: 413px;
-  display: none;
+  display: block;
 }
 .choice-t {
   width: 100%;

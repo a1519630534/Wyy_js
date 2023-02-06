@@ -4,85 +4,26 @@
             <div class="rank-left">
                 <h3>云音乐特色榜</h3>
                 <ul>
-                    <li class="first_li_bg">
-                        <img src="../../../../public/rank-imgs/rl01.jpg" alt="">
-                        <p>每天更新</p>
-                        <p>飙升榜</p>
+                    <li :class="{first_li_bg:defaindex === index}" v-for="List,index in Rank.rankList " @click="swIndex(index,List.id)" >
+                        <img :src="List.coverImgUrl" alt="">
+                        <p>{{ List.updateFrequency }}</p>
+                        <p>{{List.name}}</p>
                     </li>
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl2.png" alt="">
-                        <p>每天更新</p>
-                        <p>新歌榜</p>
-                    </li>
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl3.png" alt="">
-                        <p>每周四更新</p>
-                        <p>原创榜</p>
-                    </li>
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl4.png" alt="">
-                        <p>每天更新</p>
-                        <p>热歌榜</p>
-                    </li>
+
                 </ul>
                 <h3>全球媒体榜</h3>
                 <ul>
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl01.jpg" alt="">
-                        <p>每周四更新</p>
-                        <p>黑胶VIP爱听榜</p>
-                    </li>
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl02.png" alt="">
-                        <p>每周五更新</p>
-                        <p>云音乐说唱榜</p>
-                    </li>
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl03.png" alt="">
-                        <p>每周四更新</p>
-                        <p>云音乐古典榜</p>
-                    </li>
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl04.jpg" alt="">
-                        <p>每周五更新</p>
-                        <p>云音乐电音榜</p>
-                    </li>
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl05.png" alt="">
-                        <p>每周四更新</p>
-                        <p>云音乐ACG榜</p>
+                    <li :class="{first_li_bg:glDefaindex === index}" v-for="global,index in Rank.globalList" @click="swGlIndex(index,global.id)">
+                        <img :src="global.coverImgUrl" alt="">
+                        <p>{{ global.updateFrequency }}</p>
+                        <p>{{global.name}}</p>
                     </li>
 
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl06.png" alt="">
-                        <p>每周四更新</p>
-                        <p>云音乐韩语榜</p>
-                    </li>
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl07.jpg" alt="">
-                        <p>每周五更新</p>
-                        <p>云音乐国电榜</p>
-                    </li>
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl08.png" alt="">
-                        <p>每周一更新</p>
-                        <p>UK排行榜周榜</p>
-                    </li>
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl09.jpg" alt="">
-                        <p>每周三更新</p>
-                        <p>美国Billboard榜</p>
-                    </li>
-                    <li>
-                        <img src="../../../../public/rank-imgs/rl10.jpg" alt="">
-                        <p>每周三更新</p>
-                        <p>Beatport全球电子舞曲榜</p>
-                    </li>
 
                 </ul>
             </div>
 
-            <Rank_right></Rank_right>
+            <Rank_right :listId="listId"></Rank_right>
 
         </div>
     </div>
@@ -90,12 +31,69 @@
 
 <script>
 
-import { defineComponent } from 'vue';
+import { defineComponent,reactive,ref } from 'vue';
 import Rank_right from './rank_right.vue';
+import api from '@/api'
 // import rank_right from './rank_right.vue';
 export default defineComponent({
     name: "rank",
-    components: { Rank_right }
+    components: { Rank_right },
+
+
+    setup(){
+
+        //存储榜单列表
+        const Rank = reactive({
+            rankList:[],
+            globalList:[]
+        })
+
+        //请求榜单列表函数
+
+        async function getRankList(){
+            const result = await api.rank.getAllRankList()
+            if(result.code === 200){
+                // console.log(result);
+                Rank.rankList = result.list.slice(0,4)
+                Rank.globalList = result.list.slice(5,15)
+            }
+        }
+
+
+        let listId = ref(19723756)
+        //点击左边排行榜切换背景色
+        let defaindex = ref(0)
+        let glDefaindex = ref(-1)
+        function swIndex(index,id){
+            glDefaindex.value = -1
+            defaindex.value = index
+            listId.value = id
+            // console.log(listId.value);
+            // console.log(defaindex.value  );
+        }
+
+        function swGlIndex(index,id){
+            defaindex.value =-2
+            glDefaindex.value = index
+            listId.value = id
+            // console.log(listId.value);
+            // console.log(defaindex.value  );
+        }
+
+
+        return {
+            Rank,
+            getRankList,
+            swIndex,
+            swGlIndex,
+            defaindex,
+            listId,
+            glDefaindex
+        }
+    },
+    mounted(){
+        this.getRankList()
+    }
 });
 
 </script>
