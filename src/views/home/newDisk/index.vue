@@ -1,266 +1,223 @@
 <template>
- <div class="newDisk">
-    <div class="disk-body">
+    <div class="newDisk">
+        <div class="disk-body">
 
-        <div>
-            <div class="disk-top">
-                <h3>热门新碟</h3>
-            </div>
-            <ul>
+            <div>
+                <div class="disk-top">
+                    <h3>热门新碟</h3>
+                </div>
+                <ul>
 
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/disk01.png" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">人间四季</a></p>
-                    <p><a href="#">尤长靖</a></p>
-                </li>
+                    <li v-for="diskList, index in newDisk.hotList" @mouseenter="hoverShow(index)"
+                        @mouseleave="hoverIndex = -1">
+                        <div>
+                            <img :src="diskList.picUrl" alt="">
+                            <a href="#"></a>
+                            <a href="javascript:;" v-show="hoverIndex === index" @click="playNewDisk(diskList.id)"></a>
+                        </div>
+                        <p><a href="#">{{ diskList.name }}</a></p>
+                        <p><a href="#">{{ diskList.artist.name }}</a></p>
+                    </li>
 
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/disk02.png" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">廿</a></p>
-                    <p><a href="#">王一博</a></p>
-                </li>
 
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/disk03.png" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">洛城</a></p>
-                    <p><a href="#">薛之谦</a></p>
-                </li>
 
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/disk04.png" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">信徒</a></p>
-                    <p><a href="#">谢帝</a></p>
-                </li>
-
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/disk05.png" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">最后的水族馆</a></p>
-                    <p><a href="#">裘德</a></p>
-                </li>
-
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/disk06.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">I'M MORE SOBER WHEN I'M DRUNK</a></p>
-                    <p><a href="#">韦礼安</a></p>
-                </li>
-
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/disk07.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">学友 经典 世界巡回演唱会 台北站 (Live)</a></p>
-                    <p><a href="#">张学友</a></p>
-                </li>
-
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/disk08.png" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">异界来客</a></p>
-                    <p><a href="#">幼稚园杀手</a></p>
-                </li>
-
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/disk09.png" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">对等关系</a></p>
-                    <p><a href="#">李荣浩&nbsp;/&nbsp;张惠妹</a></p>
-                </li>
-
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/disk10.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">孤勇者</a></p>
-                    <p><a href="#">陈奕迅</a></p>
-                </li>
-
-            </ul>
-        </div>
-
-        <div>
-
-            <div class="disk-top">
-                <h3>全部新碟</h3>
-                <ol>
-                    <li><a href="#">全部</a></li>
-                    <li></li>
-                    <li><a href="#">华语</a></li>
-                    <li></li>
-                    <li><a href="#">欧美</a></li>
-                    <li></li>
-                    <li><a href="#">韩国</a></li>
-                    <li></li>
-                    <li><a href="#">日本</a></li>
-                </ol>
+                </ul>
             </div>
 
-            <ul>
+            <div>
 
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/ad1.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">A Dangerous Thing</a></p>
-                    <p><a href="#">AURORA</a></p>
-                </li>
+                <div class="disk-top">
+                    <h3>全部新碟</h3>
+                    <ol>
+                        <li v-for="taplist in tap"><a href="javascript:;" @click="tapSearch(taplist)">{{
+                            taplist.title
+                        }}</a></li>
 
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/ad2.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">Don’t Wake Me Up</a></p>
-                    <p><a href="#">Jonas Blue</a></p>
-                </li>
+                    </ol>
+                </div>
 
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/ad3.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">Queen of Ice (Nora En Pure Remix)</a></p>
-                    <p><a href="#">Claptone</a></p>
-                </li>
+                <ul>
 
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/ad4.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">Dear Fear</a></p>
-                    <p><a href="#">KOTA The Friend</a></p>
-                </li>
+                    <li v-for="tap, index in newDisk.tapList" @mouseenter="hoverDownShow(index)"
+                        @mouseleave="hoverDownIndex = -1">
+                        <div>
+                            <img :src="tap.picUrl" alt="">
+                            <a href="#"></a>
+                            <a href="javascript:;" v-show="hoverDownIndex === index" @click="playNewDisk(tap.id)"></a>
+                        </div>
+                        <p><a href="#">{{ tap.name }}</a></p>
+                        <p><a href="#">{{ tap.artist.name }}</a></p>
+                    </li>
 
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/ad5.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">Wherever You Go (feat. John Martin) [Alan Walker Remix]</a></p>
-                    <p><a href="#">Alok</a></p>
-                </li>
 
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/bd1.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">Leaving (Live from Studio S2)</a></p>
-                    <p><a href="#">Hania Rani</a></p>
-                </li>
+                </ul>
 
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/bd2.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">Purple Sun</a></p>
-                    <p><a href="#">Cannons</a></p>
-                </li>
+            </div>
 
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/bd3.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">postcard from Milan</a></p>
-                    <p><a href="#">Oscar Anton</a></p>
-                </li>
-
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/bd4.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">Blacklight</a></p>
-                    <p><a href="#">Grazze</a></p>
-                </li>
-
-                <li>
-                    <div>
-                        <img src="../../../../public/rank-imgs/bd5.jpg" alt="">
-                        <a href="#"></a>
-                        <a href="#"></a>
-                    </div>
-                    <p><a href="#">Human Heart</a></p>
-                    <p><a href="#">Marc Benjamin</a></p>
-                </li>
-
-            </ul>
+            <span style="display: block;">
+                <el-pagination  style="margin: 20px 0 30px 225px;" small background layout="prev, pager,next, total"
+                :total="total" prev-text="上一页" next-text="下一页" @current-change="handleCurrentChange"
+                @prev-click="prevClick" @next-click="nextClick" :page-size="35" />
+            </span>
 
         </div>
-
-        <div class="pages">
-            <a class="pre" href="javascript:void(0);">上一页</a>
-            <a class="curr" href="javascript:void(0);">1</a>
-            <a href="javascript:void(0);">2</a>
-            <a href="javascript:void(0);">3</a>
-            <a href="javascript:void(0);">4</a>
-            <a href="javascript:void(0);">5</a>
-            <a href="javascript:void(0);">6</a>
-            <a href="javascript:void(0);">7</a>
-            <a href="javascript:void(0);">8</a>
-            <a href="javascript:void(0);">9</a>
-            <i>...</i>
-            <a href="javascript:void(0);">10503</a>
-            <a class="next" href="javascript:void(0);">下一页</a>
-        </div>
-
+        
     </div>
-</div>
+
 </template>
 
 <script>
 
-import { defineComponent } from 'vue';
+import api from '@/api';
+import { defineComponent, reactive, ref } from 'vue';
+import { useStore } from 'vuex';
 
 export default defineComponent({
 
-  name: 'NewDisk',
+    name: 'NewDisk',
+    setup() {
+
+        const store = useStore()
+        const newDisk = reactive({
+            hotList: [],
+            tapList: []
+        })
+        const tap = ref([
+            {
+                title: '全部',
+                area: 'ALL'
+            },
+            {
+                title: '',
+                area: ''
+            },
+            {
+                title: '华语',
+                area: 'ZH'
+            },
+            {
+                title: '',
+                area: ''
+            },
+            {
+                title: '欧美',
+                area: 'EA'
+            },
+            {
+                title: '',
+                area: ''
+            },
+            {
+                title: '韩国',
+                area: 'KR'
+            },
+            {
+                title: '',
+                area: ''
+            },
+            {
+                title: '日本',
+                area: 'JP'
+            },
+        ])
+
+        let plArea = ref('ALL')
+        let total = ref(0)
+        //标签数据
+
+        //发送获取热门新碟请求
+
+        async function getHotDisk() {
+            const result = await api.newdisk.getHotDisk()
+            if (result.code === 200) {
+                newDisk.hotList = result.weekData.slice(0, 10)
+            }
+        }
+
+        //点击标签切换列表
+        async function tapSearch({ area }) {
+            if (!area) {
+                area = 'ALL'
+            }
+            plArea.value = area
+            //发情请求获取数据
+            getPlList(area,0)
+        }
+
+        //鼠标移入显示
+        let hoverIndex = ref(-1)
+        let hoverDownIndex = ref(-1)
+        function hoverShow(index) {
+            hoverDownIndex.value = -1
+            hoverIndex.value = index
+        }
+
+        function hoverDownShow(index) {
+            hoverIndex.value = -1
+            hoverDownIndex.value = index
+        }
+
+
+
+        //点击播放按钮
+        function playNewDisk(id) {
+            console.log(id);
+            store.dispatch('getPlayList', id)
+        }
+
+
+
+        //获取下方列表
+        async function getPlList(plArea,i){
+            const result = await api.newdisk.getTapDiskList(35, i, plArea)
+
+            if (result.code === 200) {
+
+                
+                newDisk.tapList = result.albums
+                total.value = result.total
+                
+            }
+        }
+        //点击下一页
+        function nextClick(i) {
+            
+            getPlList(plArea.value, i)
+        }
+        //点击上一页
+        function prevClick(i) {
+            getPlList(plArea.value, i)
+        }
+
+        //点击页数
+        function handleCurrentChange(i) {
+            getPlList(plArea.value, i)
+        }
+
+
+
+
+
+        return {
+            newDisk,
+            getHotDisk,
+            tap,
+            tapSearch,
+            hoverShow,
+            hoverIndex,
+            hoverDownShow,
+            hoverDownIndex,
+            playNewDisk,
+            nextClick,
+            prevClick,
+            handleCurrentChange,
+            total
+        }
+    },
+    mounted() {
+        this.getHotDisk(),
+            this.tapSearch(10, 0)
+    }
 
 });
 

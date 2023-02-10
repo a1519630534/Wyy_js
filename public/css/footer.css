@@ -120,3 +120,31 @@ footer .footer-box .footer-right ul li:nth-child(5) span {
   background: url("../logo/foot_enter_tt.png") no-repeat 12px -78px;
   background-size: 170px 153px;
 }
+
+
+footer .play_q{
+
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+}
+
+footer .play_q .play_body .play_info{
+float: left;
+
+    
+}
+footer .play_q .play_body .play_info a{
+ 
+  text-align: center;
+  line-height: 50px;
+  font-size: 14px;
+  color: white;
+      
+  }
+footer .play_q .play_body .play_main{
+  float: left;
+      
+  }

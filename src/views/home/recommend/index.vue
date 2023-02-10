@@ -49,7 +49,7 @@
             <div>
                 <h3>
                     <span>入驻歌手</span>
-                    <a href="#"> 查看全部&nbsp;></a>
+                    <a href="javascript:;" @click="tiaozhuan"> 查看全部&nbsp;></a>
                 </h3>
                 <ul>
                     <li v-for="songer in UserList.regSonger">
@@ -101,6 +101,7 @@ import newDisk from './newDisk.vue';
 import rank from './rank.vue';
 import { defineComponent,reactive } from 'vue';
 import api from '@/api';
+import { useRouter } from 'vue-router';
 
 export default defineComponent({
 
@@ -108,6 +109,7 @@ export default defineComponent({
   components:{hot,newDisk,rank},
 
   setup() {
+    const router = useRouter()
     //获取入驻歌手
     const UserList = reactive({
         regSonger:[],
@@ -146,11 +148,17 @@ export default defineComponent({
     }
 
 
+    //点击更多入驻歌手
+    function tiaozhuan(){
+        router.push('/songer')
+    }
+
     return {
         getRegSonger,
         UserList,
         Banner,
-        getBannerList
+        getBannerList,
+        tiaozhuan
     }
   },
   mounted(){

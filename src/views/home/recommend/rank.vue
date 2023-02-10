@@ -15,8 +15,8 @@
                         <a href="javascript:void(0);">
                             <h3>飙升榜</h3>
                         </a>
-                        <a href="javascript:void(0);"></a>
-                        <a href="javascript:void(0);"></a>
+                        <a href="javascript:;" @click="playRank(1)"></a>
+                        <a href="javascript:;"></a>
                     </div>
                 </dt>
                 <dd>
@@ -34,7 +34,7 @@
 
                     </ol>
                     <div class="forAll">
-                        <a href="javascript:void(0);">查看全部></a>
+                        <a href="javascript:void(0);" @click="swRank(19723756)">查看全部></a>
                     </div>
                 </dd>
             </dl>
@@ -48,7 +48,7 @@
                         <a href="javascript:void(0);">
                             <h3>新歌榜</h3>
                         </a>
-                        <a href="javascript:void(0);"></a>
+                        <a href="javascript:void(0);" @click="playRank(2)"></a>
                         <a href="javascript:void(0);"></a>
                     </div>
                 </dt>
@@ -67,7 +67,7 @@
  
                     </ol>
                     <div class="forAll">
-                        <a href="javascript:void(0);">查看全部></a>
+                        <a href="javascript:void(0);" @click="swRank(3779629)">查看全部></a>
                     </div>
                 </dd>
             </dl>
@@ -81,7 +81,7 @@
                         <a href="javascript:void(0);">
                             <h3>原创榜</h3>
                         </a>
-                        <a href="javascript:void(0);"></a>
+                        <a href="javascript:void(0);" @click="playRank(3)"></a>
                         <a href="javascript:void(0);"></a>
                     </div>
                 </dt>
@@ -100,7 +100,7 @@
 
                     </ol>
                     <div class="forAll">
-                        <a href="javascript:void(0);">查看全部></a>
+                        <a href="javascript:void(0);" @click="swRank(2884035)">查看全部></a>
                     </div>
                 </dd>
             </dl>
@@ -112,6 +112,8 @@
 
 import { defineComponent,reactive } from 'vue';
 import api from '@/api';
+import { useStore } from 'vuex';
+import { useRoute,useRouter } from 'vue-router';
 
 export default defineComponent({
 
@@ -144,9 +146,32 @@ export default defineComponent({
             // console.log(RankList.soaringList);
         }
 
+        //点击播放按钮
+        const store = useStore()
+        function playRank(i){
+            if(i===1){
+                store.dispatch('getPlayList',19723756)
+            } else if(i === 2){
+                store.dispatch('getPlayList',3779629)
+            }else {
+                store.dispatch('getPlayList',2884035)
+
+            }
+        }
+
+        //点击查看更多切换到榜单路由
+        const router = useRouter()
+        function swRank(id){
+            router.push({
+                name:'rank',
+                params:{id:id}
+            })
+        }
         return {
             RankList,
-            getRankList
+            getRankList,
+            playRank,
+            swRank
         }
     },
     mounted(){

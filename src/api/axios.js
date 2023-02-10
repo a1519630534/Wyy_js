@@ -5,6 +5,7 @@ const http = axios.create({
     baseURL: 'http://localhost:3000',
     timeout: 8000,
     // headers: headers
+    withCredentials: true
 })
 
 

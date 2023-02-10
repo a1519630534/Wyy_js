@@ -1,5 +1,7 @@
 import { createStore } from 'vuex'
-
+// import audio from './audio'
+import audio from './modules/audio'
+import userinfo from './modules/userinfo'
 export default createStore({
   state: {
   },
@@ -10,5 +12,7 @@ export default createStore({
   actions: {
   },
   modules: {
+    audio,
+    userinfo
   }
 })

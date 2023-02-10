@@ -1,112 +1,3 @@
-<template>
-    <div class="ranking">
-        <div class="rank-body">
-            <div class="rank-left">
-                <h3>云音乐特色榜</h3>
-                <ul>
-                    <li :class="{first_li_bg:defaindex === index}" v-for="List,index in Rank.rankList " @click="swIndex(index,List.id)" >
-                        <img :src="List.coverImgUrl" alt="">
-                        <p>{{ List.updateFrequency }}</p>
-                        <p>{{List.name}}</p>
-                    </li>
-
-                </ul>
-                <h3>全球媒体榜</h3>
-                <ul>
-                    <li :class="{first_li_bg:glDefaindex === index}" v-for="global,index in Rank.globalList" @click="swGlIndex(index,global.id)">
-                        <img :src="global.coverImgUrl" alt="">
-                        <p>{{ global.updateFrequency }}</p>
-                        <p>{{global.name}}</p>
-                    </li>
-
-
-                </ul>
-            </div>
-
-            <Rank_right :listId="listId" :rankId="rankId"></Rank_right>
-
-        </div>
-    </div>
-</template>
-
-<script>
-
-import { defineComponent,reactive,ref } from 'vue';
-import { useRoute } from 'vue-router';
-import Rank_right from './rank_right.vue';
-import api from '@/api'
-// import rank_right from './rank_right.vue';
-export default defineComponent({
-    name: "rank",
-    components: { Rank_right },
-
-
-    setup(){
-
-        //存储榜单列表
-        const Rank = reactive({
-            rankList:[],
-            globalList:[]
-        })
-
-        //请求榜单列表函数
-
-        async function getRankList(){
-            const result = await api.rank.getAllRankList()
-            if(result.code === 200){
-                // console.log(result);
-                Rank.rankList = result.list.slice(0,4)
-                Rank.globalList = result.list.slice(5,15)
-            }
-        }
-
-
-        let listId = ref(19723756)
-        //点击左边排行榜切换背景色
-        let defaindex = ref(0)
-        let glDefaindex = ref(-1)
-        function swIndex(index,id){
-            glDefaindex.value = -1
-            defaindex.value = index
-            listId.value = id
-            // console.log(listId.value);
-            // console.log(defaindex.value  );
-        }
-
-        function swGlIndex(index,id){
-            defaindex.value =-2
-            glDefaindex.value = index
-            listId.value = id
-            // console.log(listId.value);
-            // console.log(defaindex.value  );
-        }
-
-        //接受params参数
-        const {params} = useRoute()
-        let rankId = ref(params.id)
-        // console.log(rankId.value);
-
-
-        return {
-            Rank,
-            getRankList,
-            swIndex,
-            swGlIndex,
-            defaindex,
-            listId,
-            glDefaindex,
-            rankId
-        }
-    },
-    mounted(){
-        this.getRankList()
-    }
-});
-
-</script>
-
-<style lang="less">
-
 
 .ranking{
     width: 100%;
@@ -155,19 +46,7 @@ export default defineComponent({
                 width: 40px;
                 height: 40px;
             }
-            p{
-                position: absolute;
-                left: 70px;
-                font-size: 12px;
-                &:nth-child(1){
-                    top: 10px;
-                    color: #333;
-                }
-                &:nth-child(2){
-                    top: 30px;
-                    color: #999;
-                }
-            }
+            
         }
     }
 }
@@ -204,7 +83,7 @@ export default defineComponent({
             left: 3px;
             width: 150px;
             height: 150px;
-            background: url('../../../../public/logo/coverall.png') no-repeat -230px -380px;
+            background: url('../logo/coverall.png') no-repeat -230px -380px;
         }
     }
     .rtr{
@@ -231,7 +110,7 @@ export default defineComponent({
                 width: 13px;
                 height: 13px;
                 margin: 9px 0 0 3px;
-                background: url('../../../../public/logo/icon.png') no-repeat -18px -682px;
+                background: url('../logo/icon.png') no-repeat -18px -682px;
             }
             span:nth-child(2){
                 color: #666;
@@ -255,13 +134,13 @@ export default defineComponent({
                     height: 31px;
                     padding-right: 5px;
                     color: #fff;
-                    background: url('../../../../public/logo/button2.png') no-repeat right -428px;
+                    background: url('../logo/button2.png') no-repeat right -428px;
                     i{
                         float: left;
                         width: 100%;
                         height: 100%;
                         padding: 0 7px 0 8px;
-                        background-image: url('../../../../public/logo/button2.png');
+                        background-image: url('../logo/button2.png');
                         background-repeat: no-repeat;
                         background-position: 0 -387px;
                         line-height: 29px;
@@ -273,7 +152,7 @@ export default defineComponent({
                             width: 20px;
                             height: 18px;
                             margin: 6px 2px 2px 0;
-                            background-image: url('../../../../public/logo/button2.png');
+                            background-image: url('../logo/button2.png');
                             background-repeat: no-repeat;
                             background-position: 0 -1622px;
                         }
@@ -285,9 +164,9 @@ export default defineComponent({
                     height: 31px;
                     margin-left: -3px;
                     margin-right: 5px;
-                    background: url('../../../../public/logo/button2.png') no-repeat 0 -1588px;
+                    background: url('../logo/button2.png') no-repeat 0 -1588px;
                     &:hover{
-                        background: url('../../../../public/logo/button2.png') no-repeat -40px -1588px;
+                        background: url('../logo/button2.png') no-repeat -40px -1588px;
                     }
                 }
 
@@ -296,7 +175,7 @@ export default defineComponent({
                     height: 31px;
                     padding-right: 5px;
                     margin-right: 6px;
-                    background: url('../../../../public/logo/button2.png') no-repeat right -1020px;
+                    background: url('../logo/button2.png') no-repeat right -1020px;
                     i{
                         float: left;
                         width: 100%;
@@ -305,9 +184,9 @@ export default defineComponent({
                         text-align: center;
                         color: #333;
                         font: normal 12px/30px simsun,\5b8b\4f53;
-                        background: url('../../../../public/logo/button2.png') no-repeat 0 -977px;
+                        background: url('../logo/button2.png') no-repeat 0 -977px;
                         &:hover{
-                            background: url('../../../../public/logo/button2.png') no-repeat 0 -1063px;
+                            background: url('../logo/button2.png') no-repeat 0 -1063px;
                         }
                     }
                 }
@@ -318,7 +197,7 @@ export default defineComponent({
                     padding-right: 5px;
                     margin-right: 6px;
                     background-color: green;
-                    background: url('../../../../public/logo/button2.png') no-repeat right -1020px;
+                    background: url('../logo/button2.png') no-repeat right -1020px;
                     i{
                         float: left;
                         width: 100%;
@@ -327,9 +206,9 @@ export default defineComponent({
                         text-align: center;
                         color: #333;
                         font: normal 12px/30px simsun,\5b8b\4f53;
-                        background: url('../../../../public/logo/button2.png') no-repeat 0 -1225px;
+                        background: url('../logo/button2.png') no-repeat 0 -1225px;
                         &:hover{
-                            background: url('../../../../public/logo/button2.png') no-repeat 0 -1268px;
+                            background: url('../logo/button2.png') no-repeat 0 -1268px;
                         }
                     }   
                 }
@@ -340,7 +219,7 @@ export default defineComponent({
                     padding-right: 5px;
                     margin-right: 6px;
                     background-color: red;
-                    background: url('../../../../public/logo/button2.png') no-repeat right -1020px;
+                    background: url('../logo/button2.png') no-repeat right -1020px;
                     i{
                         float: left;
                         width: 100%;
@@ -348,9 +227,9 @@ export default defineComponent({
                         padding: 0 2px 0 28px;
                         color: #333;
                         font: normal 12px/30px simsun,\5b8b\4f53;
-                        background: url('../../../../public/logo/button2.png') no-repeat 0 -2761px;
+                        background: url('../logo/button2.png') no-repeat 0 -2761px;
                         &:hover{
-                            background: url('../../../../public/logo/button2.png') no-repeat 0 -2805px;
+                            background: url('../logo/button2.png') no-repeat 0 -2805px;
                         }
                     }
                 }
@@ -360,7 +239,7 @@ export default defineComponent({
                     height: 31px;
                     padding-right: 5px;
                     margin-right: 6px;
-                    background: url('../../../../public/logo/button2.png') no-repeat right -1020px;
+                    background: url('../logo/button2.png') no-repeat right -1020px;
                     i{
                         float: left;
                         width: 100%;
@@ -369,9 +248,9 @@ export default defineComponent({
                         color: #333;
                         font: normal 12px/30px simsun,\5b8b\4f53;
                         background-color: red;
-                        background: url('../../../../public/logo/button2.png') no-repeat 0 -1465px;
+                        background: url('../logo/button2.png') no-repeat 0 -1465px;
                         &:hover{
-                            background: url('../../../../public/logo/button2.png') no-repeat 0 -1508px;
+                            background: url('../logo/button2.png') no-repeat 0 -1508px;
                         }
                     }
                 }
@@ -430,7 +309,7 @@ thead{
             color: #666;
             background-color: #f7f7f7;
             font-weight: normal;
-            background: url('../../../../public/logo/table.png') repeat-x 0 0;
+            background: url('../logo/table.png') repeat-x 0 0;
             &:nth-child(1){
                 width: 12%;
             }
@@ -451,7 +330,7 @@ thead{
                 font-size: 12px;
                 line-height: 16px;
                 padding: 8px 10px 8px 10px;
-                background: url('../../../../public/logo/table.png') no-repeat 0 -56px;
+                background: url('../logo/table.png') no-repeat 0 -56px;
             }
 
         }
@@ -481,7 +360,7 @@ tbody{
                 padding-left: 8px;
                 line-height: 17px;
                 font-family: Arial, Helvetica, sans-serif;
-                background: url('../../../../public/logo/icon.png') no-repeat -74px -299px;
+                background: url('../logo/icon.png') no-repeat -74px -299px;
             }
         }
 
@@ -501,10 +380,10 @@ tbody{
             a:nth-child(2){
                 width: 17px;
                 height: 17px;
-                background: url('../../../../public/logo/table.png') no-repeat 0 -103px;
+                background: url('../logo/table.png') no-repeat 0 -103px;
                 margin: 17px 8px 0 15px;
                 &:hover{
-                    background: url('../../../../public/logo/table.png') no-repeat 0 -128px;
+                    background: url('../logo/table.png') no-repeat 0 -128px;
                 }
             }
             a:nth-child(3){
@@ -519,9 +398,9 @@ tbody{
                 width: 23px;
                 height: 17px;
                 margin: 17px 8px 0 0;
-                background: url('../../../../public/logo/table.png') no-repeat 0 -151px;
+                background: url('../logo/table.png') no-repeat 0 -151px;
                 &:hover{
-                    background: url('../../../../public/logo/table.png') no-repeat -30px -151px;
+                    background: url('../logo/table.png') no-repeat -30px -151px;
                 }
             }
 
@@ -545,7 +424,7 @@ tbody{
                 a:nth-child(1){
                     width: 13px;
                     height: 13px;
-                    background-image: url('../../../../public/logo/icon.png');
+                    background-image: url('../logo/icon.png');
                     background-position: 0 -700px;
                     &:hover{
                         background-position: -22px -700px;
@@ -555,7 +434,7 @@ tbody{
                     width: 18px;
                     height: 16px;
                     margin-left: 2px;
-                    background-image: url('../../../../public/logo/table.png');
+                    background-image: url('../logo/table.png');
                     background-position: 0 -174px;
                     &:hover{
                         background-position: -20px -174px;
@@ -565,7 +444,7 @@ tbody{
                     width: 18px;
                     height: 16px;
                     margin-left: 2px;
-                    background-image: url('../../../../public/logo/table.png');
+                    background-image: url('../logo/table.png');
                     background-position: 0 -195px;
                     &:hover{
                         background-position: -20px -195px;
@@ -575,7 +454,7 @@ tbody{
                     width: 18px;
                     height: 16px;
                     margin-left: 2px;
-                    background-image: url('../../../../public/logo/table.png');
+                    background-image: url('../logo/table.png');
                     background-position: -81px -174px;
                     &:hover{
                         background-position: -104px -174px;
@@ -615,7 +494,7 @@ tbody{
                 width: 16px;
                 height: 17px;
                 font-family: Arial, Helvetica, sans-serif;
-                background: url('../../../../public/logo/icon.png') no-repeat -67px -283px;
+                background: url('../logo/icon.png') no-repeat -67px -283px;
             }
         }
 
@@ -624,10 +503,10 @@ tbody{
                 float: left;
                 width: 17px;
                 height: 17px;
-                background: url('../../../../public/logo/table.png') no-repeat 0 -103px;
+                background: url('../logo/table.png') no-repeat 0 -103px;
                 margin-right: 8px;
                 &:hover{
-                    background: url('../../../../public/logo/table.png') no-repeat 0 -128px;
+                    background: url('../logo/table.png') no-repeat 0 -128px;
                 }
             }
             a:nth-child(2){
@@ -658,7 +537,7 @@ tbody{
                 a:nth-child(1){
                     width: 13px;
                     height: 13px;
-                    background-image: url('../../../../public/logo/icon.png');
+                    background-image: url('../logo/icon.png');
                     background-position: 0 -700px;
                     &:hover{
                         background-position: -22px -700px;
@@ -668,7 +547,7 @@ tbody{
                     width: 18px;
                     height: 16px;
                     margin-left: 2px;
-                    background-image: url('../../../../public/logo/table.png');
+                    background-image: url('../logo/table.png');
                     background-position: 0 -174px;
                     &:hover{
                         background-position: -20px -174px;
@@ -678,7 +557,7 @@ tbody{
                     width: 18px;
                     height: 16px;
                     margin-left: 2px;
-                    background-image: url('../../../../public/logo/table.png');
+                    background-image: url('../logo/table.png');
                     background-position: 0 -195px;
                     &:hover{
                         background-position: -20px -195px;
@@ -688,7 +567,7 @@ tbody{
                     width: 18px;
                     height: 16px;
                     margin-left: 2px;
-                    background-image: url('../../../../public/logo/table.png');
+                    background-image: url('../logo/table.png');
                     background-position: -81px -174px;
                     &:hover{
                         background-position: -104px -174px;
@@ -785,13 +664,13 @@ tbody{
             width: 18px;
             height: 18px;
             margin-right: 10px;
-            background: url('../../../../public/logo/icon.png') no-repeat -40px -490px;
+            background: url('../logo/icon.png') no-repeat -40px -490px;
         }
         a:nth-child(2){
             float: left;
             width: 18px;
             height: 18px;
-            background: url('../../../../public/logo/icon.png') no-repeat -60px -490px;
+            background: url('../logo/icon.png') no-repeat -60px -490px;
         }
         a:nth-child(3){
             float: right;
@@ -801,9 +680,9 @@ tbody{
             font-size: 12px;
             line-height: 25px;
             text-align: center;
-            background: url('../../../../public/logo/button.png') no-repeat -84px -64px;
+            background: url('../logo/button.png') no-repeat -84px -64px;
             &:hover{
-                background: url('../../../../public/logo/button.png') no-repeat -84px -94px;
+                background: url('../logo/button.png') no-repeat -84px -94px;
             }
         }
         span{
@@ -878,7 +757,7 @@ tbody{
                 width: 15px;
                 height: 14px;
                 margin-left: 10px;
-                background: url('../../../../public/logo/icon2.png') -150px 0;
+                background: url('../logo/icon2.png') -150px 0;
             }
 
             a:nth-child(3){
@@ -905,6 +784,3 @@ tbody{
 
 }
 
-
-
-</style>

@@ -9,6 +9,9 @@ export default{
     },
     getRankComment(id,pageNo){
         // console.log(123);
+        if(!pageNo){
+            pageNo = 1
+        }
         return axios(`/comment/new?type=2&id=${id}&sortType=2&pageNo=${pageNo}`)
         
     }

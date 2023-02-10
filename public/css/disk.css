@@ -76,11 +76,11 @@
   bottom: 6px;
   width: 28px;
   height: 28px;
-  display: none;
+  display: block;
   background: url('../logo/iconall.png') 0 -140px;
 }
 .disk-body > div ul li div a:nth-child(3):hover {
-  background: url('../logo/iconall.png') 0 -170px;
+  background: url('../logo/iconall.png') 0 -170px no-repeat;
 }
 .disk-body > div ul li p:nth-child(2) {
   white-space: nowrap;

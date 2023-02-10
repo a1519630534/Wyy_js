@@ -10,31 +10,17 @@
                 <a href="javascript:void()0;">热门</a>
             </div>
 
-            <SongBody></SongBody>
+            <SongBody :switchText="switchText" ></SongBody>
 
-            <div class="pages">
-                <a class="pre" href="javascript:void(0);">上一页</a>
-                <a class="curr" href="javascript:void(0);">1</a>
-                <a href="javascript:void(0);">2</a>
-                <a href="javascript:void(0);">3</a>
-                <a href="javascript:void(0);">4</a>
-                <a href="javascript:void(0);">5</a>
-                <a href="javascript:void(0);">6</a>
-                <a href="javascript:void(0);">7</a>
-                <a href="javascript:void(0);">8</a>
-                <a href="javascript:void(0);">9</a>
-                <i>...</i>
-                <a href="javascript:void(0);">10503</a>
-                <a class="next" href="javascript:void(0);">下一页</a>
-            </div>
+            
 
             <div v-show="isShowChoice" class="choice">
             <div class="choice-t"><i></i></div>
 
-            <div class="choice-body">
+            <div class="choice-body" @click="switchSongList">
                 <div><a href="#">全部风格</a></div>
 
-                <dl>
+                <dl >
                     <dt><i class="dt-i-1"></i>语种</dt>
                     <dd>
                         <a href="#">华语</a>
@@ -233,8 +219,24 @@ export default defineComponent({
    
     setup() {
         let isShowChoice = ref(false);
+
+        //点击风格切换歌单列表
+        let switchText = ref('')
+        function switchSongList(event){
+            switchText.value =  event.target.innerText
+            isShowChoice.value = false
+            // console.log(switchText);
+        }
+
+
+        
+
         return {
-            isShowChoice
+            isShowChoice,
+            switchSongList,
+            switchText,
+           
+            
         };
     },
     components: { SongBody }

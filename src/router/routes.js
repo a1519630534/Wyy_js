@@ -5,28 +5,51 @@ export default [
     component: () => import('@/views/home/recommend')
   },
   {
-    path: '/rank',
+    path: '/rank/:id?',
     name: 'rank',
-    component: () => import('@/views/home/rank')
+    component: () => import('@/views/home/rank'),
+    meta:{
+      isShow:false
+    }
   },
   {
-    path: '/songlist',
+    path: '/songlist/:cat?',
     name: 'songlist',
-    component: () => import('@/views/home/songList')
+    component: () => import('@/views/home/songList'),
+    meta:{
+      isShow:false
+    }
   },
   {
     path: '/radio',
     name: 'radio',
-    component: () => import('@/views/home/radio')
+    component: () => import('@/views/home/radio'),
+    meta:{
+      isShow:false
+    }
   },
   {
     path: '/songer',
     name: 'songer',
-    component: () => import('@/views/home/songer')
+    component: () => import('@/views/home/songer'),
+    meta:{
+      isShow:false
+    }
   },
   {
     path: '/newdisk',
     name: 'newdisk',
-    component: () => import('@/views/home/newDisk')
+    component: () => import('@/views/home/newDisk'),
+    meta:{
+      isShow:false
+    }
+  },
+  {
+    path: '/mymusic',
+    name: 'mymusic',
+    component: () => import('@/views/myMusic'),
+    meta:{
+      isShow:true
+    }
   },
 ]

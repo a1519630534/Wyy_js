@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="left-top">
-            <a class="hot" href="#">新碟上架</a>
-            <a class="more" href="#">更多</a>
+            <a class="hot" href="javascript:;">新碟上架</a>
+            <a class="more" href="javascript:" @click="tiaozhuan">更多</a>
         </div>
 
         <div class="second-body">
@@ -128,12 +128,14 @@
 
 import { defineComponent,reactive } from 'vue';
 import api from '@/api';
+import { useRouter } from 'vue-router';
 export default defineComponent({
 
     name: 'Home_newDisk',
 
     setup(){
         //获取每日新碟
+        const route = useRouter()
         const diskList = reactive({
             weekData:[]
         })
@@ -147,9 +149,14 @@ export default defineComponent({
         }
 
 
+        //点击更多
+        function tiaozhuan(){
+            route.push('/newdisk')
+        }
         return {
             diskList,
-            getDayDisk
+            getDayDisk,
+            tiaozhuan
         }
     },
     mounted(){

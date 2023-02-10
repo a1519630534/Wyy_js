@@ -1,15 +1,9 @@
 <template>
-    
-     <!-- footer部分开始 -->
-     <footer>
-        <div class="play_q" style="width: 100%;background-color: #333;height: 50px;position: fixed; bottom: 0;">
-            <audio controls height="100" width="100" style="margin-left: 670px;">
-                
-                <!-- <source src="playUrl.url" type="audio/mpeg">
-                <source src="playUrl.url" type="audio/ogg"> -->
-                <embed height="50" width="100" src="horse.mp3">
-            </audio>
-        </div>
+
+    <!-- footer部分开始 -->
+    <footer >
+
+        <!-- <Budio></Budio> -->
         <div class="footer-box">
             <div class="footer-left">
                 <div>
@@ -48,17 +42,73 @@
                 </ul>
             </div>
         </div>
+        
     </footer>
     <!-- footer部分结束 -->
+    
 </template>
 
 <script>
 
-import { defineComponent } from 'vue';
 
+import { defineComponent, reactive, ref, computed, watch } from 'vue';
+import { useStore } from 'vuex';
+import Budio from './audio.vue'
 export default defineComponent({
 
-  name: 'Footer',
+    name: 'Footer',
+    components:{Budio},
+    setup() {
+
+        let playIndex = ref(0)
+
+        const store = useStore()
+
+        //获取歌单
+        let playUrl = computed(() => {
+            // if (store.state.audio.urlList === []) {
+
+            //     return [{ url: '' }]
+            // }
+
+            return store.state.audio.urlList
+        })
+
+  
+        //获取歌单名字
+        
+        let playName = computed(() => {
+            
+            // console.log(playName);
+            return store.state.audio.playName || [{name:''}]
+        })
+
+        
+        //切换上下歌曲
+        function nextPlay(type) {
+            if (type === 1) {
+                playIndex.value++
+                if (playIndex.value > playUrl.length) playIndex.value = playUrl.length
+                console.log(playIndex.value);
+            } else {
+                playIndex.value--
+                // console.log(playIndex.value);
+                if (playIndex.value < 0) playIndex.value = 0
+            }
+        }
+        return {
+            playIndex,
+            nextPlay,
+            playUrl,
+            playName
+
+        }
+    },
+
+    mounted() {
+        // console.log(store);
+    },
+
 
 });
 
