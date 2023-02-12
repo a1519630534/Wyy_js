@@ -314,7 +314,7 @@
   position: absolute;
   top: 1px;
   right: 2px;
-  display: none;
+  display: block;
   width: 82px;
   margin-top: 7px;
 }

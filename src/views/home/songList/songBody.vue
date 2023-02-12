@@ -3,7 +3,7 @@
         <ul>
             <li v-for="song, index in songList.songList">
                 <div>
-                    <img style="width: 140px;height: 140px;" :src="song.coverImgUrl" alt="">
+                    <img style="width: 140px;height: 140px;" :src="song.coverImgUrl + '?param=500y500'" alt="">
                     <a href="#"></a>
                     <div>
                         <span>{{ song.playCount }}</span>
@@ -14,7 +14,7 @@
                 <p><a href="#"></a></p>
                 <p><a href="#">{{ song.name }}</a></p>
                 <span>by </span>
-                <p><a>{{ song.creator.nickname }}</a> <img :src="songList.identityIconUrl[index].identityIconUrl" alt=""
+                <p><a>{{ song.creator.nickname }}</a> <img :src="songList.identityIconUrl[index].identityIconUrl + '?param=500y500'" alt=""
                         style="width: 13px;height: 13px;">
                 </p>
                 <span></span>

@@ -26,6 +26,7 @@ const mutations = {
 const actions = {
     //点击播放歌单按钮根据歌单ID获取歌单详情
     async getPlayList({ commit }, id) {
+        // console.log(11);
         commit('RESET_PLAY_DATA')
         const result = await api.audio.getAudioList(id)
         if (result.code === 200) {
@@ -52,7 +53,10 @@ const actions = {
         }
     },
     async playOneSonger({commit},data){
-        // console.log(id);
+        // console.log('asdasdasd');
+        if(!data){
+            data = {id:0,name:'0'}
+        }
         const result = await api.audio.getAudioUrl(data.id)
         if(result.code === 200){
             // console.log(result);

@@ -20,7 +20,7 @@
             <ul>
                 <li v-for="item,index in recommendList.List">
                     <div>
-                        <img style="width: 140px;height: 140px;" :src="item.picUrl" alt="">
+                        <img style="width: 140px;height: 140px;" :src="item.picUrl + '?param=500y500'" alt="">
                         <a href="javascript:;"></a>
                         <div>
                             <span>{{ item.playCount }}</span>

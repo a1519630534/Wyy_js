@@ -3,6 +3,7 @@
   <router-view></router-view>
   <Footer v-if="route.path !== '/mymusic'"></Footer>
   <Budio></Budio>
+
 </template>
 
 <script>
@@ -35,6 +36,7 @@ export default defineComponent({
     }
   },
   mounted(){
+   
     //获取用户信息
     this.store.dispatch('getUserInfo')
   }

@@ -11,7 +11,7 @@
                     <li v-for="diskList, index in newDisk.hotList" @mouseenter="hoverShow(index)"
                         @mouseleave="hoverIndex = -1">
                         <div>
-                            <img :src="diskList.picUrl" alt="">
+                            <img :src="diskList.picUrl + '?param=200y200'" alt="">
                             <a href="#"></a>
                             <a href="javascript:;" v-show="hoverIndex === index" @click="playNewDisk(diskList.id)"></a>
                         </div>
@@ -41,7 +41,7 @@
                     <li v-for="tap, index in newDisk.tapList" @mouseenter="hoverDownShow(index)"
                         @mouseleave="hoverDownIndex = -1">
                         <div>
-                            <img :src="tap.picUrl" alt="">
+                            <img :src="tap.picUrl + '?param=200y200'" alt="">
                             <a href="#"></a>
                             <a href="javascript:;" v-show="hoverDownIndex === index" @click="playNewDisk(tap.id)"></a>
                         </div>

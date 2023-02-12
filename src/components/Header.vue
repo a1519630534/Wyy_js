@@ -9,8 +9,10 @@
                         <router-link to="/"></router-link>
                     </a></h1>
                 <ul class="header-top-ul">
-                    <li><router-link to="/">发现音乐</router-link><em></em></li>
-                    <li><router-link to="/mymusic">我的音乐</router-link><em></em></li>
+                    <li><router-link to="/" :class="{ 'top-a-ele-click': route.path === '/' }">发现音乐</router-link><em></em>
+                    </li>
+                    <li><router-link to="/mymusic"
+                            :class="{ 'top-a-ele-click': route.path === '/mymusic' }">我的音乐</router-link><em></em></li>
                     <li><a id="follow" href="#">关注</a><em></em></li>
                     <li><a id="shop" href="#">商城</a><em></em></li>
                     <li><a id="musician" href="#">音乐人</a><em></em></li>
@@ -39,9 +41,10 @@
         <!-- header-top结束 -->
 
         <div class="header-none-box">
-            
+
         </div>
-        <hr style="background-color: #c11515;height: 13px;width: 100%;margin: -5px 0;border: none;" v-if="route.path === '/mymusic'">
+        <hr style="background-color: #c11515;height: 13px;width: 100%;margin: -5px 0;border: none;"
+            v-if="route.path === '/mymusic'">
         <!-- header-bottom开始 -->
         <div class="header-bottom" v-if="route.path !== '/mymusic'">
             <div class="header-bottom-box">
@@ -106,7 +109,7 @@ export default defineComponent({
     setup() {
         const route = useRoute()
 
-        
+
         const store = useStore()
 
         //从vuex获取用户信息
@@ -226,7 +229,7 @@ export default defineComponent({
         }
     },
     mounted() {
-        
+
     }
 
 });

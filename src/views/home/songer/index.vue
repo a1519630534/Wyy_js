@@ -30,7 +30,7 @@
 
                         <li v-for="hotList, index in songer.hotList">
                             <div>
-                                <img :src="hotList.picUrl" alt="">
+                                <img :src="hotList.picUrl + '?param=500y500'" alt="">
                                 <a href="#"></a>
                             </div>
                             <p><a href="#">{{ hotList.name }}</a></p>

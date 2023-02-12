@@ -6,9 +6,11 @@ import songer from './home/songer'
 import newdisk from './home/newdisk'
 import audio from './home/audio'
 import myMusic from './myMusic'
+import mySongList from './mySongList'
 
 import login from './login'
 export default {
+    mySongList,
     recommend,
     rank,
     songList,

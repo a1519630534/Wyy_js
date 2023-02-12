@@ -8,7 +8,7 @@
                     <li v-for="radios, index in radio.categories" @click="typeSearch(radios.id)">
                         <a>
                             <span style="background:none;"><img style="width: 48px;height: 48px;"
-                                    :src="radios.pic84x84IdUrl" alt=""></span>
+                                    :src="radios.pic84x84IdUrl + '?param=500y500'" alt=""></span>
                             {{ radios.name }}
                         </a>
                     </li>
@@ -30,7 +30,7 @@
                     <ul>
 
                         <li v-for="comment in radio.commentList"> 
-                            <a ><img style="width: 40px;height: 40px;" :src="comment.radio.picUrl" alt=""><i></i></a>
+                            <a ><img style="width: 40px;height: 40px;" :src="comment.radio.picUrl + '?param=500y500'" alt=""><i></i></a>
                             <div>
                                 <p>{{comment.name}}</p>
                                 <p>{{comment.dj.brand}}</p>
@@ -50,7 +50,7 @@
                     <ul>
 
                         <li v-for="hotList,index in radio.hotRank">
-                            <a href="#"><img style="width: 40px;height: 40px;" :src="hotList.program.coverUrl" alt=""><i></i></a>
+                            <a href="#"><img style="width: 40px;height: 40px;" :src="hotList.program.coverUrl + '?param=500y500'" alt=""><i></i></a>
                             <div style="width: 208px;">
                                 <p>{{hotList.program.mainSong.name}}</p>
                                 <p>{{hotList.program.radio.category}}</p>
@@ -77,7 +77,7 @@
 
                 <ul>
                     <li v-for="typeList, index in radio.typeList">
-                        <a href="#"><img :src="typeList.intervenePicUrl" alt=""></a>
+                        <a href="#"><img :src="typeList.intervenePicUrl + '?param=500y500'" alt=""></a>
                         <div>
                             <h3><a href="#">{{ typeList.name }}</a></h3><br>
                             <p>{{ typeList.rcmdtext }}</p>
@@ -99,7 +99,7 @@
 
                 <ul>
                     <li v-for="typeAll, index in radio.typeALlList">
-                        <a href="#"><img :src="typeAll.intervenePicUrl" alt=""></a>
+                        <a href="#"><img :src="typeAll.intervenePicUrl + '?param=500y500'" alt=""></a>
                         <div>
                             <h3><a href="#">{{typeAll.name}}</a></h3><br>
                             <p>共{{typeAll.programCount}}期   订阅{{typeAll.subCount}}次</p>
@@ -122,7 +122,7 @@
 
                 <ul>
                     <li v-for="songList in List.radios" >
-                        <a href="javascript:;"><img :src="songList.picUrl" alt=""></a>
+                        <a href="javascript:;"><img :src="songList.picUrl + '?param=500y500'" alt=""></a>
                         <div>
                             <h3><a >{{songList.name}}</a></h3><br>
                             <p>{{songList.rcmdText}}</p>

@@ -1,14 +1,14 @@
 <template>
     <div class="myMusic">
-        <div class="myMusic-body" style="width: 100%;">
+        <div class="myMusic-body" style="width: 100%;height: 720px;">
             <div class="myMusic-left" style="height: 780px;margin-left:500px ;overflow: auto;">
 
                 <h3>收藏的歌单</h3>
                 <ul>
-                    <li v-for="song in userSongL.songList" @click="changeSongList(song)" >
+                    <li v-for="song in userSongL.songList" @click="changeSongList(song)">
                         <img :src="song.coverImgUrl" alt="">
 
-                        <p >{{ song.name }}</p>
+                        <p>{{ song.name }}</p>
                         <p
                             style="bottom: 15px;overflow:hidden; text-overflow:ellipsis; white-space:nowrap;width: 130px;">
                             {{ song.trackCount }}首 by {{ song.creator.nickname }}</p>
@@ -19,8 +19,9 @@
             </div>
 
             <div class="myMusic-right" style="overflow: auto;height: 780px; width: 900px;">
+                <h2 v-if="!store.state.userinfo.userinfo">登录后查看</h2>
 
-                <div class="rr-top">
+                <div class="rr-top" v-if="store.state.userinfo.userinfo">
                     <div>
                         <div class="rtl">
                             <img :src="userSongL.songMore.imgUrl || 'https://p1.music.126.net/3PQzIfifbUjizweMqhfpxg==/109951165448272154.jpg'"
@@ -37,25 +38,30 @@
                                 <span style="color: #0c73c2; font-size: 14px;">{{
                                     userSongL.songMore.createName
                                 }}</span>
-                                <span>（刚刚更新）</span>
+                                <!-- <span>（刚刚更新）</span> -->
                             </div>
 
                             <div class="rtr3">
-                                <a href="javascript:void(0);">
+                                <a href="javascript:;" @click="usePlayOne.playList(userSongL.songMore.id || 431024390)">
                                     <i>播放<em></em></i>
                                 </a>
-                                <a href="javascript:void(0);"></a>
-                                <a href="javascript:void(0);"><i>收藏</i></a>
-                                <a href="javascript:void(0);"><i>分享</i></a>
-                                <a href="javascript:void(0);"><i>下载</i></a>
-                                <a href="javascript:void(0);"><i>评论</i></a>
+                                <a href="javascript:;" ></a>
+                                <a href="javascript:;"><i>{{ userSongL.songMore.subcount || 0 }}</i></a>
+                                <a href="javascript:;"><i>分享</i></a>
+                                <a href="javascript:;"><i>下载</i></a>
+                                <a href="javascript:;"><i>评论</i></a>
+                            </div>
+                            <div v-show="userSongL.songMore.description">
+                                <p
+                                    style="font-size: 12px;color: #666;overflow:hidden; text-overflow:ellipsis; height: 65px;width: 513px;">
+                                    介绍：{{ userSongL.songMore.description }}</p>
                             </div>
                         </div>
 
                     </div>
                 </div>
 
-                <div class="rr-body">
+                <div class="rr-body" v-if="store.state.userinfo.userinfo">
                     <div class="rrb-top">
                         <h3>歌曲列表</h3>
                         <!-- <span>{{99}}首歌</span>
@@ -79,7 +85,7 @@
                         </thead>
 
                         <tbody>
-                            <tr v-for="List, index in userSongL.songInfo">
+                            <tr v-for="List, index in userSongL.songInfo" @mouseenter="showBtn(index)" @mouseleave="isShowBtn=-2">
                                 <td>
                                     <i>{{ index+ 1}}</i>
 
@@ -87,20 +93,20 @@
 
                                 <td>
 
-                                    <a href="javascrit:;" @click="playSong(List)" @mouseenter=""></a>
+                                    <a href="javascrit:;" @click="playSong(List)"></a>
                                     <a href="javascrit:;">{{ List.name }}</a>
                                     <a href="javascrit:;"></a>
                                 </td>
 
                                 <td>
-                                    <span>{{ parseInt((List.dt % (1000 * 60 * 60)) / (1000 * 60)) }}: {{ String((List.dt
+                                    <span v-show="isShowBtn !== index">{{ parseInt((List.dt % (1000 * 60 * 60)) / (1000 * 60)) }}: {{ String((List.dt
                                 % (1000 *
                                     60))).substring(0, 2) }}</span>
-                                    <div>
-                                        <a href="javascrtpt:void(0);"></a>
-                                        <a href="javascrtpt:void(0);"></a>
-                                        <a href="javascrtpt:void(0);"></a>
-                                        <a href="javascrtpt:void(0);"></a>
+                                    <div v-show="isShowBtn === index">
+                                        <a href="javascrtpt:;"></a>
+                                        <a href="javascrtpt:;" @click="subSong(List.id)"></a>
+                                        <a href="javascrtpt:;"></a>
+                                        <a href="javascrtpt:;"></a>
                                     </div>
                                 </td>
 
@@ -149,18 +155,22 @@
 
         </div>
     </div>
+    <subSongList v-if="isShowSub" :subInfo="subInfo.songId"></subSongList>
 </template>
 
 <script>
 
 import api from '@/api';
-import { defineComponent, computed, reactive, torefs } from 'vue';
+import { defineComponent, computed, reactive,ref } from 'vue';
 import { useStore } from 'vuex';
-
+import usePlayOne from '@/hooks/usePlayOne';
+import subSongList from '@/components/subSongList.vue';
 export default defineComponent({
 
     name: 'myMysic',
+    components:{subSongList},
     setup() {
+
 
         const store = useStore()
 
@@ -175,7 +185,13 @@ export default defineComponent({
         //获取用户收藏歌单
         let userid = computed(() => {
 
-            return store.state.userinfo.userinfo.userId
+            if (store.state.userinfo.userinfo) {
+                return store.state.userinfo.userinfo.userId
+            } else {
+
+                return -1
+            }
+
         })
 
         async function getUserSongList(uid) {
@@ -203,10 +219,16 @@ export default defineComponent({
 
         //点击歌单切换歌曲
         function changeSongList(item) {
-            console.log(item.name);
+            console.log(item);
             userSongL.songMore.name = item.name
             userSongL.songMore.createName = item.creator.nickname
             userSongL.songMore.imgUrl = item.coverImgUrl
+            userSongL.songMore.subcount = item.subscribedCount
+            userSongL.songMore.description = item.description
+            userSongL.songMore.id = item.id
+
+
+
             getMySongList(item.id)
         }
 
@@ -217,6 +239,24 @@ export default defineComponent({
             store.dispatch('playOneSonger', { id: item.id, name: item.name })
         }
 
+
+        //鼠标移入显示按钮
+        let isShowBtn = ref(-2)
+
+        function showBtn(index){
+            isShowBtn.value = index
+        }
+
+
+        //收藏歌曲的显示隐藏
+        let isShowSub = ref(0)
+        const subInfo = reactive({
+            songId:0
+        })
+        function subSong(id){
+            isShowSub.value = 1
+            subInfo.songId = id
+        }
         return {
             userid,
             store,
@@ -224,7 +264,13 @@ export default defineComponent({
             userSongL,
             getMySongList,
             changeSongList,
-            playSong
+            playSong,
+            usePlayOne,
+            showBtn,
+            isShowBtn,
+            isShowSub,
+            subSong,
+            subInfo
         }
     },
     mounted() {
@@ -643,164 +689,7 @@ tbody {
         background-color: #f7f7f7;
     }
 
-    .top3 {
-        height: 70px;
 
-        td:nth-child(1) {
-            padding: 6px 10px 6px 10px;
-
-            i {
-                float: left;
-                color: #999;
-                font-size: 12px;
-                font-style: normal;
-            }
-
-            .span_bg {
-                float: right;
-                font-size: 10px;
-                color: #bb2128;
-                padding-left: 8px;
-                line-height: 17px;
-                font-family: Arial, Helvetica, sans-serif;
-                background: url('../../../public/logo/icon.png') no-repeat -74px -299px;
-            }
-        }
-
-        td:nth-child(2) {
-            padding: 10px;
-
-            img {
-                width: 50px;
-                height: 50px;
-            }
-
-            a {
-                float: left;
-            }
-
-            a:nth-child(1) {
-                width: 50px;
-                height: 50px;
-            }
-
-            a:nth-child(2) {
-                width: 17px;
-                height: 17px;
-                background: url('../../../public/logo/table.png') no-repeat 0 -103px;
-                margin: 17px 8px 0 15px;
-
-                &:hover {
-                    background: url('../../../public/logo/table.png') no-repeat 0 -128px;
-                }
-            }
-
-            a:nth-child(3) {
-                color: #333;
-                font-size: 12px;
-                margin: 17px 8px 0 0;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-
-            a:nth-child(4) {
-                width: 23px;
-                height: 17px;
-                margin: 17px 8px 0 0;
-                background: url('../../../public/logo/table.png') no-repeat 0 -151px;
-
-                &:hover {
-                    background: url('../../../public/logo/table.png') no-repeat -30px -151px;
-                }
-            }
-
-
-        }
-
-        td:nth-child(3) {
-            padding: 6px 10px 6px 10px;
-
-            span {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 12px;
-                color: #333;
-            }
-
-            &>div {
-                display: none;
-
-                a {
-                    float: left;
-                    margin-top: 2px;
-                    background-repeat: no-repeat;
-                }
-
-                a:nth-child(1) {
-                    width: 13px;
-                    height: 13px;
-                    background-image: url('../../../public/logo/icon.png');
-                    background-position: 0 -700px;
-
-                    &:hover {
-                        background-position: -22px -700px;
-                    }
-                }
-
-                a:nth-child(2) {
-                    width: 18px;
-                    height: 16px;
-                    margin-left: 2px;
-                    background-image: url('../../../public/logo/table.png');
-                    background-position: 0 -174px;
-
-                    &:hover {
-                        background-position: -20px -174px;
-                    }
-                }
-
-                a:nth-child(3) {
-                    width: 18px;
-                    height: 16px;
-                    margin-left: 2px;
-                    background-image: url('../../../public/logo/table.png');
-                    background-position: 0 -195px;
-
-                    &:hover {
-                        background-position: -20px -195px;
-                    }
-                }
-
-                a:nth-child(4) {
-                    width: 18px;
-                    height: 16px;
-                    margin-left: 2px;
-                    background-image: url('../../../public/logo/table.png');
-                    background-position: -81px -174px;
-
-                    &:hover {
-                        background-position: -104px -174px;
-                    }
-                }
-
-            }
-        }
-
-        td:nth-child(4) {
-            padding: 6px 10px 6px 10px;
-
-            a {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 12px;
-                color: #333;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-    }
 
     tr {
         height: 30px;
@@ -861,7 +750,7 @@ tbody {
             }
 
             &>div {
-                display: none;
+                display: block;
 
                 a {
                     float: left;

@@ -15,18 +15,18 @@
           <div>
             <i></i>
             <span>最近更新：{{ rankInfo.updateTime }}</span>
-            <span>（刚刚更新）</span>
+            <!-- <span>（刚刚更新）</span> -->
           </div>
 
-          <div class="rtr3">
-            <a href="javascript:void(0);">
+          <div class="rtr3" >
+            <a href="javascript:;" @click="usePlayOne.playList(rankInfo.info.id)">
               <i>播放<em></em></i>
             </a>
-            <a href="javascript:void(0);"></a>
-            <a href="javascript:void(0);"><i>({{ rankInfo.info.subscribedCount }})</i></a>
-            <a href="javascript:void(0);"><i>({{ rankInfo.info.shareCount }})</i></a>
-            <a href="javascript:void(0);"><i>下载</i></a>
-            <a href="javascript:void(0);"><i>({{ rankInfo.info.commentCount }})</i></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"><i>({{ rankInfo.info.subscribedCount }})</i></a>
+            <a href="javascript:;"><i>({{ rankInfo.info.shareCount }})</i></a>
+            <a href="javascript:;"><i>下载</i></a>
+            <a href="javascript:;"><i>({{ rankInfo.info.commentCount }})</i></a>
           </div>
         </div>
 
@@ -67,8 +67,8 @@
               <a v-if="index < 3" href="javascrit:void(0);">
                 <img :src="songList.al.picUrl" alt="">
               </a>
-              <a href="javascrit:void(0);"></a>
-              <a href="javascrit:void(0);">{{ songList.name }}</a>
+              <a href="javascrit:;" @click="usePlayOne.play(songList.id)"></a>
+              <a href="javascrit:;">{{ songList.name }}</a>
               <!-- <a href="javascrit:void(0);"></a> -->
             </td>
 
@@ -155,7 +155,7 @@ import useSwitchTime from '@/hooks/useSwitchTime'
 import { useRoute } from 'vue-router';
 import { onMounted, reactive, defineProps, watch, ref } from 'vue';
 
-
+import usePlayOne from '@/hooks/usePlayOne';
 
 const props = defineProps(['listId', 'rankId'])
 const route = useRoute()
@@ -190,9 +190,15 @@ const rankListComment = reactive({
 async function getRankInfo(id, pageNo) {
   // console.log(id,'id');
   //如果id不存在则默认排行榜
-  id = songid.value
+
   if (!id) {
-    id = 19723756
+
+    if (songid.value) {
+      id = songid.value
+    } else {
+      id = 19723756
+    }
+
   }
   const result = await api.rank.getRankListInfo(id)
   if (result.code === 200) {
@@ -239,13 +245,16 @@ function handleCurrentChange(i) {
 }
 
 
-//将歌曲毫秒转换为分钟
 
+//点击播放
+function asdasdad(id){
+  console.log(id);
+}
 onMounted(() => {
 
 
   getRankInfo(rankId.value)
-  console.log(route.params.id);
+  // console.log(route.params.id);
 
   // console.log(rankInfo);
 })

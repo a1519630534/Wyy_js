@@ -5,7 +5,7 @@
                 <h3>云音乐特色榜</h3>
                 <ul>
                     <li :class="{first_li_bg:defaindex === index}" v-for="List,index in Rank.rankList " @click="swIndex(index,List.id)" >
-                        <img :src="List.coverImgUrl" alt="">
+                        <img :src="List.coverImgUrl + '?param=500y500'" alt="">
                         <p>{{ List.updateFrequency }}</p>
                         <p>{{List.name}}</p>
                     </li>
@@ -14,7 +14,7 @@
                 <h3>全球媒体榜</h3>
                 <ul>
                     <li :class="{first_li_bg:glDefaindex === index}" v-for="global,index in Rank.globalList" @click="swGlIndex(index,global.id)">
-                        <img :src="global.coverImgUrl" alt="">
+                        <img :src="global.coverImgUrl + '?param=500y500'" alt="">
                         <p>{{ global.updateFrequency }}</p>
                         <p>{{global.name}}</p>
                     </li>

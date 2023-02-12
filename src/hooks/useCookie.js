@@ -19,6 +19,9 @@ let cookie = 'cookie'
 
  function removeCookie(){
     Cookies.remove(cookie)
+    Cookies.remove('MUSIC_U')
+    Cookies.remove('NMTID')
+    Cookies.remove('__csrf')
     localStorage.removeItem(cookie)
 }
 
